@@ -6,8 +6,11 @@
 
 /* lg <= Extra large (xl) */
 @media (max-width: 1200px) {
-  .page__navigation .navigation {
+  .navigation__section .navigation {
     display: none;
+  }
+  .company__info-item .item__info-wrapper .item__title {
+    font-size: 1.2rem;
   }
 }
 
@@ -52,5 +55,8 @@
 @media (min-width: 1400px) {
   .text {
     font-size: 18px;
+  }
+  .container {
+    max-width: 1200px;
   }
 }
