@@ -9,6 +9,15 @@
   .navigation__section .navigation {
     display: none;
   }
+  .company__info-item {
+    flex-direction: column;
+    align-items: center;
+  }
+  .company__info-item .item__info-wrapper {
+    padding: 24px;
+    clip-path: none;
+    width: 100%;
+  }
   .company__info-item .item__info-wrapper .item__title {
     font-size: 1.2rem;
   }

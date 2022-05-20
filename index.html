@@ -135,15 +135,15 @@
         <nav class="navigation">
           <ul class="navigation__list">
             <li class="navigation__list-item">
-              <a href="#">О предприятии</a>
+              <a href="/about.html">О предприятии</a>
             </li>
             <li class="navigation__list-item">
-              <a href="#">Тарифы</a>
+              <a href="/tarifs.html">Тарифы</a>
             </li>
           </ul>
           <ul class="navigation__list">
             <li class="navigation__list-item">
-              <a href="#">Новости</a>
+              <a href="/news.html">Новости</a>
             </li>
             <li class="navigation__list-item">
               <a href="#">Абонентам</a>
@@ -152,7 +152,7 @@
               <a href="#">Документы</a>
             </li>
             <li class="navigation__list-item">
-              <a href="#">Контакты</a>
+              <a href="/contacts.html">Контакты</a>
             </li>
           </ul>
           <ul class="navigation__list">
@@ -206,7 +206,7 @@
       </section>
       <section class="company__info">
         <div class="container">
-          <div class="company__info-title">МУП Водоканал г. Яранск</div>
+          <div class="company__info-title title">МУП Водоканал г. Яранск</div>
           <div class="company__info-description">
             <p class="description">
               Рыбатекст используется дизайнерами, проектировщиками и фронтендерами, когда нужно
@@ -325,7 +325,7 @@
       </section>
       <section class="last-news">
         <div class="container">
-          <div class="last-news__title">Последние новости</div>
+          <div class="last-news__title title">Последние новости</div>
           <div class="last-news__row">
             <!--  -->
             <a href="#" class="last-news__item">
@@ -365,6 +365,7 @@
       </section>
       <section class="meters">
         <div class="container">
+          <div class="meters__title title">Передать показания ПУ</div>
           <div class="meters__block">
             <div class="meters__img">
               <svg
@@ -414,21 +415,47 @@
             </div>
             <div class="meters__form">
               <form>
-                <div class="input__group">
-                  <div class="input__group-item">
-                    <label>Лицевой счет</label>
-                    <input type="text" />
+                <div class="form__inputs-block">
+                  <div class="input__group">
+                    <div class="input__group-item">
+                      <label>Лицевой счет</label>
+                      <input type="text" />
+                    </div>
+                    <div class="input__group-item">
+                      <label>ФИО</label>
+                      <input type="text" />
+                    </div>
                   </div>
-                  <div class="input__group-item">
-                    <label>ФИО</label>
-                    <input type="text" />
+                  <div class="input__group">
+                    <div class="input__group-item">
+                      <label>Показания ПУ</label>
+                      <input type="text" />
+                    </div>
                   </div>
                 </div>
-                <div class="input__group">
-                  <div class="input__group-item">
-                    <label>Показания ПУ</label>
-                    <input type="text" />
+                <div class="add__field">
+                  <div class="add__button">
+                    <i class="icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12 9V12M12 12V15M12 12H15M12 12H9M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </i>
                   </div>
+                </div>
+                <div class="form__button">
+                  <button class="button">Передать показания</button>
                 </div>
               </form>
             </div>
@@ -436,5 +463,6 @@
         </div>
       </section>
     </main>
+    <footer class="footer">3</footer>
   </body>
 </html>
