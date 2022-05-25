@@ -135,10 +135,10 @@
         <nav class="navigation">
           <ul class="navigation__list">
             <li class="navigation__list-item">
-              <a href="/about.html">О предприятии</a>
+              <a href="/">Главная</a>
             </li>
             <li class="navigation__list-item">
-              <a href="/tarifs.html">Тарифы</a>
+              <a href="/about.html">О предприятии</a>
             </li>
           </ul>
           <ul class="navigation__list">
@@ -152,7 +152,7 @@
               <a href="#">Документы</a>
             </li>
             <li class="navigation__list-item">
-              <a href="/contacts.html">Контакты</a>
+              <a class="active" href="/contacts.html">Контакты</a>
             </li>
           </ul>
           <ul class="navigation__list">
@@ -178,34 +178,114 @@
       </div>
       <div class="container">
         <div class="contacts__info">
-          <div class="info__item">
-            <div class="info__item-title">Контактная информация</div>
-            <div class="info__item-body">
-              <div class="info__item-row">
-                <div class="info__item-col">Электронная почта</div>
-                <div class="info__item-col">vodokanal.yaransk@yandex.ru</div>
-              </div>
-              <div class="info__item-row">
-                <div class="info__item-col">Касса</div>
-                <div class="info__item-col">8 (83367) 2-22-22</div>
-              </div>
-              <div class="info__item-row">
-                <div class="info__item-col">Бухгалтерия</div>
-                <div class="info__item-col">8 (83367) 2-22-22</div>
+          <div class="row">
+            <div class="col">
+              <div class="contacts__info-item">
+                <div class="contacts__info-item__title">Контактная информация</div>
+                <div class="contacts__info-item__body">
+                  <div class="contacts__info-item__row">
+                    <div class="contacts__info-item__col">Электронная почта</div>
+                    <div class="contacts__info-item__col">vodokanal.yaransk@yandex.ru</div>
+                  </div>
+                  <div class="contacts__info-item__row">
+                    <div class="contacts__info-item__col">Касса</div>
+                    <div class="contacts__info-item__col">8 (83367) 2-22-22</div>
+                  </div>
+                  <div class="contacts__info-item__row">
+                    <div class="contacts__info-item__col">Бухгалтерия</div>
+                    <div class="contacts__info-item__col">8 (83367) 2-22-22</div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="info__item">
-            <iframe
-              src="https://yandex.ru/map-widget/v1/?um=constructor%3A7921077592d2b1ad9ac0bf69582b891728154fe4c8746414b0e408cd9aef9428&amp;source=constructor"
-              width="100%"
-              height="400"
-              frameborder="0"
-            ></iframe>
+            <div class="col">
+              <div class="contacts__info-item">
+                <iframe
+                  src="https://yandex.ru/map-widget/v1/?um=constructor%3A7921077592d2b1ad9ac0bf69582b891728154fe4c8746414b0e408cd9aef9428&amp;source=constructor"
+                  width="100%"
+                  height="400"
+                  frameborder="0"
+                ></iframe>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </main>
-    <footer class="footer">3</footer>
+    <footer class="footer">
+      <div class="footer__top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-sm-6 col-12 footer-col">
+              <p class="footer__subtitle">МУП Водоканал</p>
+              <p class="footer__subtitle">г. Яранск ул. Кирова, 36</p>
+              <div class="footer__menu">
+                <p class="footer__subtitle">8 (83367) 2-22-22</p>
+                <span class="footer__menu-item">Диспетчер</span>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12 footer-col">
+              <p class="footer__subtitle">Абонентам</p>
+              <ul class="footer__menu">
+                <li class="footer__menu-item"><a href="#">Режим работы</a></li>
+                <li class="footer__menu-item"><a href="#">Способы оплаты</a></li>
+                <li class="footer__menu-item"><a href="#">Приборы учета</a></li>
+                <li class="footer__menu-item"><a href="#">Тарифы</a></li>
+                <li class="footer__menu-item"><a href="#">Обратная связь</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12 footer-col">
+              <p class="footer__subtitle">Контакты</p>
+              <ul class="footer__menu">
+                <li class="footer__menu-item">
+                  <span class="item__title">Касса</span
+                  ><a
+                    href="tel:8 (83367) 2-22-22
+                  "
+                  ></a
+                  >8 (83367) 2-22-22
+                </li>
+                <li class="footer__menu-item">
+                  <span class="item__title">Бухгалтерия</span
+                  ><a
+                    href="tel:8 (83367) 2-22-22
+                  "
+                  ></a
+                  >8 (83367) 2-22-22
+                </li>
+                <li class="footer__menu-item">
+                  <span class="item__title">Юрист</span
+                  ><a
+                    href="tel:8 (83367) 2-22-22
+                  "
+                  ></a
+                  >8 (83367) 2-22-22
+                </li>
+              </ul>
+              <div class="footer__menu">
+                <span class="item__title">Адрес электронной почты</span
+                ><a href="mailto:vodokanal.yaransk@yandex.ru"></a> vodokanal.yaransk@yandex.ru
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12 footer-col flex-end">
+              <div class="footer__nav">
+                <p class="footer__subtitle"><a href="#">О предприятии</a></p>
+                <p class="footer__subtitle"><a href="#">Документы</a></p>
+                <p class="footer__subtitle"><a href="#">Новости</a></p>
+                <p class="footer__subtitle"><a href="#">Личный кабинет</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="container">
+          <ul class="footer__bottom-info">
+            <li class="info__item">© МУП Водоканал 2022 г.</li>
+            <li class="info__item"><a href="#">Обработка персональных данных</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

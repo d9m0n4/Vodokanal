@@ -135,10 +135,10 @@
         <nav class="navigation">
           <ul class="navigation__list">
             <li class="navigation__list-item">
-              <a href="/about.html">О предприятии</a>
+              <a href="/">Главная</a>
             </li>
             <li class="navigation__list-item">
-              <a href="/tarifs.html">Тарифы</a>
+              <a href="/about.html">О предприятии</a>
             </li>
           </ul>
           <ul class="navigation__list">
@@ -146,7 +146,7 @@
               <a href="/news.html">Новости</a>
             </li>
             <li class="navigation__list-item">
-              <a href="/consumers.html">Абонентам</a>
+              <a class="active" href="/consumers.html">Абонентам</a>
             </li>
             <li class="navigation__list-item">
               <a href="#">Документы</a>
@@ -179,15 +179,124 @@
       </div>
       <div class="container">
         <div class="consumers__info">
-          <div class="info__row">
-            <div class="info__col">
-              <div class="info__col-title">Способы оплаты платежных документов</div>
+          <div class="row">
+            <div class="col-3">
+              <div class="info__nav">
+                <nav>
+                  <ul>
+                    <li><a class="active" href="/consumers.html">Способы оплаты</a></li>
+                    <li><a href="/workHours.html">Режим работы</a></li>
+                    <li><a href="">Приборы учета</a></li>
+                    <li><a href="/tarifs.html">Тарифы</a></li>
+                    <li><a href="">Обратная связь</a></li>
+                  </ul>
+                </nav>
+              </div>
             </div>
-            <div class="info__col">3</div>
+            <div class="col">
+              <div class="info__img" style="background-image: url(./images/pages/1.jpg)">
+                <div class="info__title">Способы оплаты платежных документов</div>
+                <div class="overlay"></div>
+              </div>
+              <div class="info__block">
+                <p class="p">
+                  Уважаемые Абоненты! Вы можете оплатить квитанции следующими способами:
+                </p>
+                <ul class="info__block-list">
+                  <li class="info__block-list__item">
+                    В кассе по адресу: г. Яранск ул. Кирова, 36 с 08:00 до 17:00, касса работает без
+                    перерыва на обед.
+                  </li>
+                  <li class="info__block-list__item">
+                    Сбербанк: мобильное приложение “СберБанк Онлайн”, личный каюинет "Сбербанк",
+                    через терминал приема оплаты в отделении банка.
+                  </li>
+                  <li class="info__block-list__item">ВТБ: мобильное приложение “ВТБ”</li>
+                  <li class="info__block-list__item">
+                    Хлынов банк: мобильное приложение “Банк Хлынов”
+                  </li>
+                  <li class="info__block-list__item">Россельхоз Банк</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </main>
-    <footer class="footer">3</footer>
+    <footer class="footer">
+      <div class="footer__top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-sm-6 col-12 footer-col">
+              <p class="footer__subtitle">МУП Водоканал</p>
+              <p class="footer__subtitle">г. Яранск ул. Кирова, 36</p>
+              <div class="footer__menu">
+                <p class="footer__subtitle">8 (83367) 2-22-22</p>
+                <span class="footer__menu-item">Диспетчер</span>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12 footer-col">
+              <p class="footer__subtitle">Абонентам</p>
+              <ul class="footer__menu">
+                <li class="footer__menu-item"><a href="#">Режим работы</a></li>
+                <li class="footer__menu-item"><a href="#">Способы оплаты</a></li>
+                <li class="footer__menu-item"><a href="#">Приборы учета</a></li>
+                <li class="footer__menu-item"><a href="#">Тарифы</a></li>
+                <li class="footer__menu-item"><a href="#">Обратная связь</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12 footer-col">
+              <p class="footer__subtitle">Контакты</p>
+              <ul class="footer__menu">
+                <li class="footer__menu-item">
+                  <span class="item__title">Касса</span
+                  ><a
+                    href="tel:8 (83367) 2-22-22
+                  "
+                  ></a
+                  >8 (83367) 2-22-22
+                </li>
+                <li class="footer__menu-item">
+                  <span class="item__title">Бухгалтерия</span
+                  ><a
+                    href="tel:8 (83367) 2-22-22
+                  "
+                  ></a
+                  >8 (83367) 2-22-22
+                </li>
+                <li class="footer__menu-item">
+                  <span class="item__title">Юрист</span
+                  ><a
+                    href="tel:8 (83367) 2-22-22
+                  "
+                  ></a
+                  >8 (83367) 2-22-22
+                </li>
+              </ul>
+              <div class="footer__menu">
+                <span class="item__title">Адрес электронной почты</span
+                ><a href="mailto:vodokanal.yaransk@yandex.ru"></a> vodokanal.yaransk@yandex.ru
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12 footer-col flex-end">
+              <div class="footer__nav">
+                <p class="footer__subtitle"><a href="#">О предприятии</a></p>
+                <p class="footer__subtitle"><a href="#">Документы</a></p>
+                <p class="footer__subtitle"><a href="#">Новости</a></p>
+                <p class="footer__subtitle"><a href="#">Личный кабинет</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="container">
+          <ul class="footer__bottom-info">
+            <li class="info__item">© МУП Водоканал 2022 г.</li>
+            <li class="info__item"><a href="#">Обработка персональных данных</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

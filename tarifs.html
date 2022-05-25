@@ -135,10 +135,10 @@
         <nav class="navigation">
           <ul class="navigation__list">
             <li class="navigation__list-item">
-              <a href="/about.html">О предприятии</a>
+              <a href="/">Главная</a>
             </li>
             <li class="navigation__list-item">
-              <a href="#">Тарифы</a>
+              <a href="/about.html">О предприятии</a>
             </li>
           </ul>
           <ul class="navigation__list">
@@ -146,7 +146,7 @@
               <a href="/news.html">Новости</a>
             </li>
             <li class="navigation__list-item">
-              <a href="/consumers.html">Абонентам</a>
+              <a class="active" href="/consumers.html">Абонентам</a>
             </li>
             <li class="navigation__list-item">
               <a href="#">Документы</a>
@@ -173,88 +173,190 @@
     <main class="main text">
       <div class="page__title">
         <div class="container">
-          <h1>Тарифы</h1>
+          <h1 class="heading">Информация для Абонентов</h1>
         </div>
+        <div class="overlay"></div>
       </div>
       <div class="container">
-        <div class="tarifs__table">
-          <div class="table__title title">Сведения о тарифе</div>
-          <table class="table">
-            <tr>
-              <td class="td table__label">Вид тарифа</td>
-              <td class="td">Тариф на питьевую воду</td>
-            </tr>
-            <tr>
-              <td class="td table__label">Наименование тарифа</td>
-              <td class="td">43_64-кс-2019 BC МУП Водоканал</td>
-            </tr>
-            <tr>
-              <td class="td table__label">Территория, на которой применяется тариф</td>
-              <td class="td">г Яранск</td>
-            </tr>
-            <tr>
-              <td class="td table__label">
-                Наименование нормативного правового акта, утверждающего тариф
-              </td>
-              <td class="td">
-                Решение региональной службы по тарифам Кировской области от 30.11.2021 №
-                42/30-кс-2022 "О внесении изменения в решение правления РСТ Кировской области от
-                04.12.2018 № 43/64-кс-2019" от 30.11.2021 № 42/30-кс-2022
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2" class="td row-name">Ставка: Плата за 1 куб. метр холодной воды</td>
-            </tr>
-            <tr>
-              <td class="td table__label">с 01.01.2022 по 30.06.2022</td>
-              <td class="td">57.94 р./Кубический метр</td>
-            </tr>
-            <tr>
-              <td class="td table__label">с 01.07.2022 по 31.12.2022</td>
-              <td class="td">58.79 р./Кубический метр</td>
-            </tr>
-          </table>
-        </div>
-        <div class="tarifs__table">
-          <div class="table__title title">Сведения о тарифе</div>
-          <table class="table">
-            <tr>
-              <td class="td table__label">Вид тарифа</td>
-              <td class="td">Тариф на водоотведение</td>
-            </tr>
-            <tr>
-              <td class="td table__label">Наименование тарифа</td>
-              <td class="td">8/1-кс-2022</td>
-            </tr>
-            <tr>
-              <td class="td table__label">Территория, на которой применяется тариф</td>
-              <td class="td">г Яранск</td>
-            </tr>
-            <tr>
-              <td class="td table__label">
-                Наименование нормативного правового акта, утверждающего тариф
-              </td>
-              <td class="td">
-                Решение региональной службы по тарифам Кировской области от 01.03.2022 № 8/1-кс-2022
-                "О тарифах на водоотведение для муниципального унитарного предприятия «Водоканал»
-                (ИНН 4339008240)" от 01.03.2022 № 8/1-кс-2022
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2" class="td row-name">Ставка: Плата за 1 куб. метр холодной воды</td>
-            </tr>
-            <tr>
-              <td class="td table__label">с 01.03.2022 по 30.06.2022</td>
-              <td class="td">58.31 р./Кубический метр</td>
-            </tr>
-            <tr>
-              <td class="td table__label">с 01.07.2022 по 31.12.2022</td>
-              <td class="td">59.31 р./Кубический метр</td>
-            </tr>
-          </table>
+        <div class="consumers__info">
+          <div class="row">
+            <div class="col-3">
+              <div class="info__nav">
+                <nav>
+                  <ul>
+                    <li><a href="/consumers.html">Способы оплаты</a></li>
+                    <li><a href="/workHours.html">Режим работы</a></li>
+                    <li><a href="">Приборы учета</a></li>
+                    <li><a class="active" href="/tarifs.html">Тарифы</a></li>
+                    <li><a href="/feedback.html">Обратная связь</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="col">
+              <div class="info__img" style="background-image: url(./images/pages/2.jpg)">
+                <div class="info__title">Тарифы</div>
+                <div class="overlay"></div>
+              </div>
+              <div class="tarifs__table">
+                <div class="table__title title">Сведения о тарифе</div>
+                <table class="table">
+                  <tr>
+                    <td class="td table__label">Вид тарифа</td>
+                    <td class="td">Тариф на питьевую воду</td>
+                  </tr>
+                  <tr>
+                    <td class="td table__label">Наименование тарифа</td>
+                    <td class="td">43_64-кс-2019 BC МУП Водоканал</td>
+                  </tr>
+                  <tr>
+                    <td class="td table__label">Территория, на которой применяется тариф</td>
+                    <td class="td">г Яранск</td>
+                  </tr>
+                  <tr>
+                    <td class="td table__label">
+                      Наименование нормативного правового акта, утверждающего тариф
+                    </td>
+                    <td class="td">
+                      Решение региональной службы по тарифам Кировской области от 30.11.2021 №
+                      42/30-кс-2022 "О внесении изменения в решение правления РСТ Кировской области
+                      от 04.12.2018 № 43/64-кс-2019" от 30.11.2021 № 42/30-кс-2022
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" class="td row-name">
+                      Ставка: Плата за 1 куб. метр холодной воды
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="td table__label">с 01.01.2022 по 30.06.2022</td>
+                    <td class="td">57.94 р./Кубический метр</td>
+                  </tr>
+                  <tr>
+                    <td class="td table__label">с 01.07.2022 по 31.12.2022</td>
+                    <td class="td">58.79 р./Кубический метр</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="tarifs__table">
+                <div class="table__title title">Сведения о тарифе</div>
+                <table class="table">
+                  <tr>
+                    <td class="td table__label">Вид тарифа</td>
+                    <td class="td">Тариф на водоотведение</td>
+                  </tr>
+                  <tr>
+                    <td class="td table__label">Наименование тарифа</td>
+                    <td class="td">8/1-кс-2022</td>
+                  </tr>
+                  <tr>
+                    <td class="td table__label">Территория, на которой применяется тариф</td>
+                    <td class="td">г Яранск</td>
+                  </tr>
+                  <tr>
+                    <td class="td table__label">
+                      Наименование нормативного правового акта, утверждающего тариф
+                    </td>
+                    <td class="td">
+                      Решение региональной службы по тарифам Кировской области от 01.03.2022 №
+                      8/1-кс-2022 "О тарифах на водоотведение для муниципального унитарного
+                      предприятия «Водоканал» (ИНН 4339008240)" от 01.03.2022 № 8/1-кс-2022
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" class="td row-name">
+                      Ставка: Плата за 1 куб. метр холодной воды
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="td table__label">с 01.03.2022 по 30.06.2022</td>
+                    <td class="td">58.31 р./Кубический метр</td>
+                  </tr>
+                  <tr>
+                    <td class="td table__label">с 01.07.2022 по 31.12.2022</td>
+                    <td class="td">59.31 р./Кубический метр</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
-    <footer class="footer">3</footer>
+    <footer class="footer">
+      <div class="footer__top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-sm-6 col-12 footer-col">
+              <p class="footer__subtitle">МУП Водоканал</p>
+              <p class="footer__subtitle">г. Яранск ул. Кирова, 36</p>
+              <div class="footer__menu">
+                <p class="footer__subtitle">8 (83367) 2-22-22</p>
+                <span class="footer__menu-item">Диспетчер</span>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12 footer-col">
+              <p class="footer__subtitle">Абонентам</p>
+              <ul class="footer__menu">
+                <li class="footer__menu-item"><a href="#">Режим работы</a></li>
+                <li class="footer__menu-item"><a href="#">Способы оплаты</a></li>
+                <li class="footer__menu-item"><a href="#">Приборы учета</a></li>
+                <li class="footer__menu-item"><a href="#">Тарифы</a></li>
+                <li class="footer__menu-item"><a href="#">Обратная связь</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12 footer-col">
+              <p class="footer__subtitle">Контакты</p>
+              <ul class="footer__menu">
+                <li class="footer__menu-item">
+                  <span class="item__title">Касса</span
+                  ><a
+                    href="tel:8 (83367) 2-22-22
+                  "
+                  ></a
+                  >8 (83367) 2-22-22
+                </li>
+                <li class="footer__menu-item">
+                  <span class="item__title">Бухгалтерия</span
+                  ><a
+                    href="tel:8 (83367) 2-22-22
+                  "
+                  ></a
+                  >8 (83367) 2-22-22
+                </li>
+                <li class="footer__menu-item">
+                  <span class="item__title">Юрист</span
+                  ><a
+                    href="tel:8 (83367) 2-22-22
+                  "
+                  ></a
+                  >8 (83367) 2-22-22
+                </li>
+              </ul>
+              <div class="footer__menu">
+                <span class="item__title">Адрес электронной почты</span
+                ><a href="mailto:vodokanal.yaransk@yandex.ru"></a> vodokanal.yaransk@yandex.ru
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12 footer-col flex-end">
+              <div class="footer__nav">
+                <p class="footer__subtitle"><a href="#">О предприятии</a></p>
+                <p class="footer__subtitle"><a href="#">Документы</a></p>
+                <p class="footer__subtitle"><a href="#">Новости</a></p>
+                <p class="footer__subtitle"><a href="#">Личный кабинет</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="container">
+          <ul class="footer__bottom-info">
+            <li class="info__item">© МУП Водоканал 2022 г.</li>
+            <li class="info__item"><a href="#">Обработка персональных данных</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
