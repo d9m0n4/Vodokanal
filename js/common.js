@@ -2,19 +2,18 @@ const swiper = new Swiper('.swiper', {
   // Optional parameters
   direction: 'horizontal',
   loop: true,
-  autoPlay: true,
+  autoplay: {
+    delay: 5000,
+  },
+  lazy: true,
+  preloadImages: false,
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true,
+  },
 
   // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
 });
-
-// $(document).ready(() => {
-//   $('.loader_inner').fadeOut();
-//   $('.loader').delay(200).fadeOut('slow');
-// });
 
 const add = $('.add__button');
 const inputBlock = $('.form__inputs-block');
@@ -24,19 +23,16 @@ add.on('click', (e) => {
   $(`<div id="meters__input" class="input__group">
   <div class="input__group-item">
     <label>Показания ПУ</label>
-    <input name="meters1" type="text" />
+    <input name="meters" type="text" />
   </div>
 </div>`)
     .fadeIn('slow')
     .appendTo(inputBlock);
 });
 
-$('#metersForm').on('submit', function (e) {
-  const d = $(this).serialize();
-  console.log(d);
-  console.log();
+function submit(e) {
   e.preventDefault();
-  $.ajax({
+  return $.ajax({
     method: 'POST',
     url: '../server.php',
     xhrFields: {
@@ -53,4 +49,21 @@ $('#metersForm').on('submit', function (e) {
       console.log(e);
     },
   });
-});
+}
+
+$('#metersForm').on('submit', submit);
+
+window.onload = function () {
+  const map = new YMaps.Map(document.getElementById('contacts__map'));
+  const geoPoint = new YMaps.GeoPoint(47.889571, 57.304186);
+  map.setCenter(geoPoint, 100);
+  map.addControl(new YMaps.Zoom());
+
+  const placemark = new YMaps.Placemark(geoPoint, { hasHint: true });
+
+  placemark.name = 'Водоканал';
+  placemark.description = 'МУП Водоканал';
+
+  map.addOverlay(placemark);
+  placemark.openBalloon();
+};

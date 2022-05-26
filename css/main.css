@@ -128,6 +128,12 @@ a:hover {
   font-size: 1.5rem;
 }
 
+.heading-bg {
+  border-radius: 8px;
+  background: rgb(28, 50, 122, 0.8);
+  padding: 2px 0;
+}
+
 /* HEADER */
 
 .header {
@@ -175,6 +181,7 @@ a:hover {
 
 .navigation__section {
   padding: 16px 0;
+  position: relative;
 }
 
 .navigation__section .navigation {
@@ -287,7 +294,18 @@ a:hover {
 
 .company__info {
   margin: 64px 0;
+  /* transform: translateX(-150%);
+  animation: ani 1s forwards; */
 }
+
+/* @keyframes ani {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+} */
 
 .company__info-title {
   font-weight: bold;
@@ -345,6 +363,7 @@ a:hover {
 
 .company__info-item .item__info-wrapper .item__title {
   line-height: 1.2;
+  font-size: 1.2rem;
   margin-bottom: 16px;
   font-weight: bold;
 }
@@ -550,6 +569,7 @@ a:hover {
   padding: 24px 16px;
   height: 100%;
   background-color: #fff;
+  min-height: 400px;
 }
 
 .contacts__info-item .contacts__info-item__title {
@@ -732,6 +752,9 @@ a:hover {
   z-index: 9;
   color: #ffffff;
   font-size: 2rem;
+  padding: 0 16px;
+  border-radius: 8px;
+  background-color: rgba(28, 50, 122, 0.8);
 }
 
 .consumers__info .info__block {
