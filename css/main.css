@@ -176,6 +176,17 @@ main {
 
 .header__main {
 	padding: .5rem 0 .5rem 0;
+	transition: all .2s ease-in-out;
+}
+
+.header__fixed {
+	position: fixed;
+	width: 100%;
+	background-color: var(--box-bg);
+	top: -50px;
+	left: 0;
+	box-shadow: var(--box-shadow);
+	z-index: 9999;
 }
 
 .header__main-body {
@@ -261,13 +272,10 @@ main {
 }
 
 .company__info{
-	margin-top: 3rem;
-	margin-bottom: 3rem;
+	margin: 3rem 0;
 }
 
-.company__info-title {
 
-}
 
 .company__info-content {
 	margin-top: 1.5rem;
@@ -311,25 +319,28 @@ main {
 /*SERVICES*/
 
 .services {
-	margin: 2rem 0;
+	margin: 3rem 0;
 }
 .services__wrapper{
-	gap: 2rem;
 	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	position: relative;
 }
 .services__row{
 	flex-wrap: wrap;
 }
-.services__row-item{
+.services__row-item {
 	padding: 1rem;
 	text-align: center;
-	max-width: 260px;
 	transition: all .3s ease-in-out;
 }
+
 
 .services__row-item:hover:not(.services__row-item--full) {
 	box-shadow: var(--box-shadow-hover);
 	cursor: pointer;
+	transform: scale(1.1);
 }
 
 .services__row-item:hover:not(.services__row-item--full) .item__title {
@@ -338,7 +349,7 @@ main {
 }
 
 .services__row-item--full{
-	max-width: 100%;
+	flex: 1 0 auto;
 }
 
 .services__row-item--full .item__title {
@@ -353,10 +364,54 @@ main {
 	color: var(--gray);
 }
 
+.services__row {
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 2rem;
+
+}
+
+.services__item-wrapper {
+	display: flex;
+	min-width: 260px;
+	position: relative;
+}
+
+.services__item-wrapper .item__description {
+	display: none;
+
+}
+
+.services__row-item.opened {
+	position: absolute;
+	width: 575px;
+	z-index: 9;
+	height: fit-content;
+
+}
+
+.services__row-item.tl.opened {
+	left: 0;
+	bottom: 0;
+	top: 0;
+}
+
+.services__row-item.tr.opened {
+
+}
+
+.services__row-item.bl.opened {
+
+}
+
+.services__row-item.br.opened {
+
+}
+
 /*NEWS*/
 
 .news {
-	margin-bottom: 2rem;
+	margin: 3rem 0;
 }
 
 .news__row {
@@ -526,4 +581,49 @@ main {
 
 .details .contacts__item-col {
 	flex: 1 0 calc(100% / 2);
+}
+
+
+.tabs__wrapper {
+	width: 100%;
+	position: relative;
+}
+
+.tabs {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: var(--black);
+}
+
+.tabs ul {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+
+}
+
+.tabs__wrapper {
+	position: relative;
+}
+
+.tabs__container {
+	overflow: hidden;
+}
+
+.tabs a {
+	padding: 1rem;
+}
+
+.tabs__content {
+	display: flex;
+	width: 300%;
+	margin-top: 2rem;
+}
+
+.tabs__item {
+	width: 100%
+
 }

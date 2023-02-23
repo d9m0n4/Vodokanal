@@ -28,7 +28,7 @@
 
 <body>
 
-	<header >
+	<header class="header">
 		<div class="header__top">
 			<div class="header__top-links container">
 				<a href="#">г. Яранск ул. Кирова д. 36</a>
@@ -63,7 +63,7 @@
 			</div>
 		</section>
 
-		<section data-scroll class="company__info">
+		<section  class="company__info">
 			<div class="container">
 				<h2 class="company__info-title title">МУП Водоканал города Яранск</h2>
 				<div class="company__info-content box">
@@ -106,37 +106,110 @@
 		<section class="services">
 			<div class="container">
 				<div class="services__wrapper">
-					<div class="services__row row">
-						<div class="services__row-item box">
-							<img src="images/icons/meterIcon.svg" alt="" class="item__icon">
-							<p class="item__title">Плановые отключения водоснабжения</p>
-						</div>
-						<div class="services__row-item box">
-							<img src="images/icons/meterIcon.svg" alt="" class="item__icon">
-							<p class="item__title">Способы оплаты квитвнций</p>
-						</div>
-						<div class="services__row-item services__row-item--full box">
-							<p class="item__title">Передача показаний индивидуальных приборов учета</p>
-							<span class="item__subtitle">Показания принимаются с 01 по 25 число каждого месяца</span>
-							<button class="button">Передать показания  </button>
+
+<!--						<div class="services__row">-->
+<!--							<div class="services__item-wrapper">-->
+<!--								<div data-box class="services__row-item tl box">-->
+<!--									<img src="images/icons/meterIcon.svg" alt="" class="item__icon">-->
+<!--									<p class="item__title">Плановые отключения водоснабжения</p>-->
+<!--								</div>-->
+<!--								<div class="item__description">-->
+<!--									<h3>								Уважаемые Абоненты!-->
+<!--									</h3>-->
+<!--									<p>-->
+<!--										На данный момент квитанции за водоснабжение и водоотведение Вы можете оплатить одним из следующих способов:-->
+<!--									</p>-->
+<!--								</div>-->
+<!--							</div>-->
+
+<!--							<div class="services__item-wrapper">-->
+<!--								<div data-box class="services__row-item box">-->
+<!--									<img src="images/icons/meterIcon.svg" alt="" class="item__icon">-->
+<!--									<p class="item__title">Плановые отключения водоснабжения</p>-->
+<!--								</div>-->
+<!--								<div class="item__description box">-->
+<!--									<h3>								Уважаемые Абоненты!-->
+<!--									</h3>-->
+<!--									<p>-->
+<!--										На данный момент квитанции за водоснабжение и водоотведение Вы можете оплатить одним из следующих способов:-->
+<!--									</p>-->
+<!--								</div>-->
+<!--							</div>-->
+
+<!--							<div class="services__row-item tr services__row-item&#45;&#45;full box">-->
+<!--								<p class="item__title">Передача показаний индивидуальных приборов учета</p>-->
+<!--								<span class="item__subtitle">Показания принимаются с 01 по 25 число каждого месяца</span>-->
+<!--								<button class="button">Передать показания  </button>-->
+<!--							</div>-->
+<!--						</div>-->
+
+<!--						<div class="services__row">-->
+<!--							<div class="services__row-item bl services__row-item&#45;&#45;full box">-->
+<!--								<p class="item__title">Передача показаний индивидуальных приборов учета</p>-->
+<!--								<span class="item__subtitle">Показания принимаются с 01 по 25 число каждого месяца</span>-->
+<!--								<button class="button">Передать показания  </button>-->
+<!--							</div>-->
+
+<!--							<div class="services__item-wrapper">-->
+<!--								<div data-box class="services__row-item br box">-->
+<!--									<img src="images/icons/meterIcon.svg" alt="" class="item__icon">-->
+<!--									<p class="item__title">Плановые отключения водоснабжения</p>-->
+<!--								</div>-->
+<!--								<div class="item__description box">-->
+<!--									<h3>								Уважаемые Абоненты!-->
+<!--									</h3>-->
+<!--									<p>-->
+<!--										На данный момент квитанции за водоснабжение и водоотведение Вы можете оплатить одним из следующих способов:-->
+<!--									</p>-->
+<!--								</div>-->
+<!--							</div>-->
+
+<!--							<div class="services__item-wrapper">-->
+<!--								<div data-box class="services__row-item box">-->
+<!--									<img src="images/icons/meterIcon.svg" alt="" class="item__icon">-->
+<!--									<p class="item__title">Плановые отключения водоснабжения</p>-->
+<!--								</div>-->
+<!--								<div class="item__description box">-->
+<!--									<h3>								Уважаемые Абоненты!-->
+<!--									</h3>-->
+<!--									<p>-->
+<!--										На данный момент квитанции за водоснабжение и водоотведение Вы можете оплатить одним из следующих способов:-->
+<!--									</p>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--						</div>-->
+
+					<div class="tabs__wrapper">
+						<div class="tabs__container">
+							<nav class="tabs">
+								<ul>
+									<li><a href="#tab1">
+										1
+									</a></li>
+									<li><a href="#tab2">
+										2
+									</a></li>
+									<li><a href="#tab3">
+										3
+									</a></li>
+								</ul>
+							</nav>
+							<div class="tabs__content">
+								<div id="tab1"  class="tabs__item box">
+									<p>tab1</p>
+								</div>
+								<div id="tab2" class="tabs__item box" >
+									<p>tab2</p>
+								</div>
+								<div id="tab3"  class="tabs__item box">
+									<p>tab3</p>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="services__row row">
-						<div class="services__row-item services__row-item--full box">
-							<p class="item__title">Передача показаний индивидуальных приборов учета</p>
-							<span class="item__subtitle">Показания принимаются с 01 по 25 число каждого месяца</span>
-							<button class="button">Передать показания  </button>
-						</div>
-						<div class="services__row-item box">
-							<img src="images/icons/meterIcon.svg" alt="" class="item__icon">
-							<p class="item__title">Плановые отключения водоснабжения</p>
-						</div>
-						<div class="services__row-item box">
-							<img src="images/icons/meterIcon.svg" alt="" class="item__icon">
-							<p class="item__title">Способы оплаты квитвнций</p>
-						</div>
-					</div>
+
 				</div>
+
 			</div>
 		</section>
 
