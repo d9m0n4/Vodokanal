@@ -41,7 +41,7 @@ serviceItems.forEach(item => {
 
 function showContent (path)  {
     if (path) {
-        document.querySelectorAll(`[data-box=${path}]`).forEach(i => i.classList.remove('active'))
+        document.querySelectorAll(`[data-box]`).forEach(i => i.classList.remove('active'))
         const currentContent = document.querySelector(`[data-box=${path}]`)
         currentContent.classList.add('active')
         closeContent(currentContent)
