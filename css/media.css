@@ -40,8 +40,6 @@
 		gap: 1rem;
 		font-size: .85rem;
 	}
-
-
 }
 
 /* md <= Large (lg) */
@@ -117,6 +115,17 @@
 
 /* xs <= Small (sm) */
 @media (max-width : 576px) {
+	.container {
+		padding: 0 1rem;
+	}
+
+	.page__title-body .title {
+		padding: 2rem 0;
+	}
+
+	.page__title-body .title::after{
+		bottom: 2rem;
+	}
 	.company__info {
 		margin: 2rem 0;
 	}
@@ -153,7 +162,7 @@
 @media (min-width : 0) {
 	.container {
 		max-width: 100%;
-		padding: 0 1rem;
+
 	}
 }
 

@@ -38,15 +38,23 @@
 		<div class="header__main">
 			<div class="header__main-body container">
 				<a href="index.html" class="header__main-logo">
-					<img src="./images/icons/logo.svg" alt="logo" class="logo image">
+					<img src="images/icons/logo.svg" alt="logo" class="logo image">
 				</a>
 				<nav class="header__main-navigation">
 					<ul class="header__navigation-list">
-						<li class="header__navigation-list__item"><a href="">О предприятии</a></li>
-						<li class="header__navigation-list__item"><a href="news.html">Новости</a></li>
-						<li class="header__navigation-list__item"><a href="">Абонентам</a></li>
-						<li class="header__navigation-list__item"><a href="">Документы</a></li>
-						<li class="header__navigation-list__item"><a href="contacts.html">Контакты</a></li>
+						<li class="header__navigation-list__item"><a href="" class="nav__link">О предприятии</a></li>
+						<li class="header__navigation-list__item"><a href="news.html" class="nav__link">Новости</a></li>
+						<li class="header__navigation-list__item">
+							<a class="nav__link">Абонентам</a>
+							<ul class="navigation__sub-menu box">
+								<li><a href="#" class="nav__link">Тарифы</a></li>
+								<li><a href="#" class="nav__link">Нормативы</a></li>
+								<li><a href="#" class="nav__link">Услуги</a></li>
+								<li><a href="#" class="nav__link">Качество воды</a></li>
+							</ul>
+						</li>
+						<li class="header__navigation-list__item"><a href="" class="nav__link">Документы</a></li>
+						<li class="header__navigation-list__item"><a href="contacts.html" class="nav__link">Контакты</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -55,7 +63,7 @@
 
 	<main>
 
-		<section class="first__screen" style="background-image: url('/images/main/1.webp')">
+		<section class="first__screen" style="background-image: url('images/main/1.webp')">
 			<div class="first__screen-content container">
 				<div class="first__screen-title">
 					<h1>Крупнейшее предприятие на территории Яранского района</h1>
@@ -105,9 +113,9 @@
 
 		<section class="services">
 			<div class="container">
-				<div class="services__wrapper">
+				<div class="services__wrapper row">
 
-						<div class="services__row">
+						<div class="services__row row">
 							<div data-target="payments" class="services__row-item box">
 									<img src="images/icons/payments.svg" alt="" draggable="false" class="item__icon">
 									<p class="item__title">Способы оплаты квитанций</p>
@@ -123,7 +131,7 @@
 							</div>
 						</div>
 
-						<div class="services__row">
+						<div class="services__row row">
 							<div class="services__row-item bl services__row-item--full box">
 								<p class="item__title">Передача показаний индивидуальных приборов учета</p>
 								<span class="item__subtitle">Показания принимаются с 01 по 25 число каждого месяца</span>
@@ -135,11 +143,11 @@
 								</div>
 							<div data-target="a" class="services__row-item box">
 									<img src="images/icons/meterIcon.svg" alt="" draggable="false" class="item__icon">
-									<p class="item__title">Плановые отключения водоснабжения</p>
+									<p class="item__title">Услуги</p>
 								</div>
 						</div>
 
-						<div class="services__content">
+						<div class="services__content row">
 
 								<div data-box="payments" class="services__content-item tl box">
 									<div class="item__body">
@@ -181,8 +189,6 @@
 								</div>
 							</div>
 						</div>
-
-
 
 			</div>
 		</section>
@@ -226,7 +232,7 @@
 		<div class="footer__main">
 			<div class="container">
 				<div class="footer__row row">
-					<div class="footer__nav">
+					<div class="footer__nav row">
 						<div class="footer__nav-item">
 							<div class="footer__heading"><a href="#" class="footer__nav-link">О предприятии</a></div>
 							<div class="footer__heading"><a href="#" class="footer__nav-link">Документы</a></div>

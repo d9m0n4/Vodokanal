@@ -28,6 +28,13 @@ window.addEventListener('DOMContentLoaded', function () {
 // })
 
 
+const scrollToTopOfElement = (el, elementContainer) => {
+    if (el.parentNode.getBoundingClientRect().top < 0) {
+        elementContainer.scrollIntoView({block: 'start'})
+    }
+}
+
+
 const serviceItems = document.querySelectorAll('.services__row-item')
 
 serviceItems.forEach(item => {
@@ -41,10 +48,12 @@ serviceItems.forEach(item => {
 
 function showContent (path)  {
     if (path) {
+        const wrapper = document.querySelector('.services')
         document.querySelectorAll(`[data-box]`).forEach(i => i.classList.remove('active'))
         const currentContent = document.querySelector(`[data-box=${path}]`)
         currentContent.classList.add('active')
         closeContent(currentContent)
+        scrollToTopOfElement(currentContent, wrapper)
     }
 }
 
