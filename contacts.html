@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/media.css">
 
-
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=API_KEY" type="text/javascript" defer></script>
     <script src="libs/jquery/jquery-3.6.0.min.js" defer></script>
     <script src="js/common.js" defer></script>
 
@@ -28,7 +28,7 @@
 
 <body>
 
-<header >
+<header class="header">
     <div class="header__top">
         <div class="header__top-links container">
             <a href="#">г. Яранск ул. Кирова д. 36</a>
@@ -38,15 +38,23 @@
     <div class="header__main">
         <div class="header__main-body container">
             <a href="index.html" class="header__main-logo">
-                <img src="./images/icons/logo.svg" alt="logo" class="logo image">
+                <img src="images/icons/logo.svg" alt="logo" class="logo image">
             </a>
             <nav class="header__main-navigation">
                 <ul class="header__navigation-list">
-                    <li class="header__navigation-list__item"><a href="">О предприятии</a></li>
-                    <li class="header__navigation-list__item"><a href="">Новости</a></li>
-                    <li class="header__navigation-list__item"><a href="">Абонентам</a></li>
-                    <li class="header__navigation-list__item"><a href="">Документы</a></li>
-                    <li class="header__navigation-list__item"><a class="active" href="">Контакты</a></li>
+                    <li class="header__navigation-list__item"><a href="" class="nav__link">О предприятии</a></li>
+                    <li class="header__navigation-list__item"><a href="news.html" class="nav__link">Новости</a></li>
+                    <li class="header__navigation-list__item">
+                        <a class="nav__link">Абонентам</a>
+                        <ul class="navigation__sub-menu box">
+                            <li><a href="#" class="nav__link">Тарифы</a></li>
+                            <li><a href="#" class="nav__link">Нормативы</a></li>
+                            <li><a href="#" class="nav__link">Услуги</a></li>
+                            <li><a href="#" class="nav__link">Качество воды</a></li>
+                        </ul>
+                    </li>
+                    <li class="header__navigation-list__item"><a href="" class="nav__link">Документы</a></li>
+                    <li class="header__navigation-list__item"><a href="contacts.html" class="nav__link">Контакты</a></li>
                 </ul>
             </nav>
         </div>
@@ -62,9 +70,39 @@
 
     <section class="page__content">
         <div class="container">
-            <div class="contacts">
-                <div class="contacts__item box">1</div>
-                <div class="contacts__item box">
+            <div class="page__content-body">
+                <div class="content__row box ">
+                    <div class="contacts__item-row row">
+                        <div class="contacts__item-col">Фактический адрес</div>
+                        <div class="contacts__item-col">Кировская обл, р-н. Яранский, г. Яранск, ул. Кирова, д. 36</div>
+                    </div>
+                    <div class="contacts__item-row row">
+                        <div class="contacts__item-col">Адрес электронной почты</div>
+                        <div class="contacts__item-col">vodokanal.yaransk@yandex.ru</div>
+                    </div>
+                    <div class="contacts__item-row row">
+                        <div class="contacts__item-col">Бухгалтерия</div>
+                        <div class="contacts__item-col">8 (83367) 2-22-22</div>
+                    </div>
+                    <div class="contacts__item-row row">
+                        <div class="contacts__item-col">Касса</div>
+                        <div class="contacts__item-col">8 (83367) 2-22-22</div>
+                    </div>
+                    <div class="contacts__item-row row">
+                        <div class="contacts__item-col">Юрист</div>
+                        <div class="contacts__item-col">8 (83367) 2-22-22</div>
+                    </div>
+                    <div class="contacts__item-row row">
+                        <div class="contacts__item-col">Директор</div>
+                        <div class="contacts__item-col">8 (83367) 2-22-22</div>
+                    </div>
+                </div>
+                <div class="content__row box">
+                    <div id="ymap" class="map">
+                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Af236f1dc8475a4916f234ea4c5db207007d629d2f66110dd2ca8322afa0ac9ec&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+                    </div>
+                </div>
+                <div class="content__row box">
                     <div class="contacts__item-row row">
                         <div class="contacts__item-col">
                             <span class="contacts__item-day">понедельник</span>
@@ -153,32 +191,7 @@
 
                     </div>
                 </div>
-                <div class="contacts__item box ">
-                    <div class="contacts__item-row row">
-                        <div class="contacts__item-col">Фактический адрес</div>
-                        <div class="contacts__item-col">Кировская обл, р-н. Яранский, г. Яранск, ул. Кирова, д. 36</div>
-                    </div>
-                    <div class="contacts__item-row row">
-                        <div class="contacts__item-col">Адрес электронной почты</div>
-                        <div class="contacts__item-col">vodokanal.yaransk@yandex.ru</div>
-                    </div>
-                    <div class="contacts__item-row row">
-                        <div class="contacts__item-col">Бухгалтерия</div>
-                        <div class="contacts__item-col">8 (83367) 2-22-22</div>
-                    </div>
-                    <div class="contacts__item-row row">
-                        <div class="contacts__item-col">Касса</div>
-                        <div class="contacts__item-col">8 (83367) 2-22-22</div>
-                    </div>
-                    <div class="contacts__item-row row">
-                        <div class="contacts__item-col">Юрист</div>
-                        <div class="contacts__item-col">8 (83367) 2-22-22</div>
-                    </div>
-                    <div class="contacts__item-row row">
-                        <div class="contacts__item-col">Директор</div>
-                        <div class="contacts__item-col">8 (83367) 2-22-22</div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>

@@ -1,5 +1,28 @@
 window.addEventListener('DOMContentLoaded', function () {
+    // const mapInit = () => {
+    //     const map = new ymaps.Map('ymap', {
+    //         center: [],
+    //         zoom: 15
+    //     })
+    // }
+    // ymaps.ready(mapInit)
 
+    const toggleAccordion = (selector, control, activeClass) => {
+        const accordions = document.querySelectorAll(selector)
+        if (accordions) {
+            accordions[0].classList.add(activeClass)
+            accordions.forEach(acc => {
+                acc.addEventListener('click', (e) => {
+                    const currentAccordion = e.currentTarget
+                    if (e.target.closest(control)) {
+                        currentAccordion.classList.toggle(activeClass)
+                    }
+                })
+
+            })
+        }
+    }
+    toggleAccordion('.page__accordion', '.page__accordion-title', 'active')
 })
 
 // const elements = document.querySelectorAll('.services__row-item')

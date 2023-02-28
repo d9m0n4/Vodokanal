@@ -10,21 +10,13 @@
 	--box-bg: #F8FbFF;
 	--gradient: linear-gradient(90deg, #187DC7 6.75%, #2D9CDB 69.75%);
 	--gradientRvs: linear-gradient(90deg, #2D9CDB 6.75%, #187DC7 69.75%);
-	--box-shadow: -4px -4px 20px rgba(255, 255, 255, 0.25), 4px 4px 20px rgba(98, 147, 195, 0.15);
-	--box-shadow-hover: -8px -8px 20px rgba(255, 255, 255, 0.25), 8px 8px 20px rgba(67, 135, 183, 0.15);
+	--box-shadow: -8px -8px 18px rgba(251, 251, 251, 0.15), 8px 8px 18px rgba(98, 147, 195, 0.15);
+	--box-shadow-hover: -8px -8px 20px rgba(251, 251, 251, 0.15), 12px 12px 22px rgba(67, 135, 183, 0.25);
 	--regular-text: 16px;
 	--lineheight: 1.65;
 	--userfont: Montserrat, sans-serif;
 	--systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
 }
-
-/* BOOTSTRAP SETTINGS SECTION */
-
-/* gutter 20px (10px + 10px). Comment this code for default gutter start at 1.5rem (24px) wide. */
-/*.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl { --bs-gutter-x: .625rem; }*/
-/*.row, .row > * { --bs-gutter-x: 1.25rem; }*/
-
-/* FONTS LOAD SECTION */
 
 @font-face {
 	font-family: "Montserrat";
@@ -47,8 +39,6 @@
 	src: url("../fonts/Montserrat-Bold.woff2") format("woff2")
 }
 
-
-
 /* GENERAL CSS SETTINGS */
 
 ::placeholder { color: #666; }
@@ -61,7 +51,6 @@ input:required:valid, textarea:required:valid { border-color: green; }
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-
 }
 
 html{
@@ -145,7 +134,43 @@ main {
 	transition: all .5s ease;
 }
 
+.nav__link {
+	color: var(--text);
+	display: block;
+	position: relative;
+	font-weight: 500;
+	cursor: pointer;
+}
 
+.nav__link::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 2px;
+	background-color: var(--accent);
+	opacity: 0;
+	transform: translateX(0%);
+	transition: all .150s ease-in-out;
+}
+
+.nav__link:hover::after {
+	transform: translateX(0);
+	opacity: 1;
+}
+
+.nav__link.active::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 2px;
+	background-color: var(--accent);
+	opacity: 1;
+	transform: translateX(0);
+}
 
 .title {
 	font-size: 1.5rem;
@@ -240,46 +265,8 @@ main {
 	margin: .5rem 0;
 }
 
-.header__navigation-list__item .navigation__sub-menu li .nav__link{
-	display: block;
-}
-
 .header__navigation-list__item .nav__link {
-	position: relative;
-	color: var(--text);
-	padding-bottom: .4rem;
-	font-weight: 500;
-	cursor: pointer;
-}
-
-.header__navigation-list__item .nav__link::after {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	width: 100%;
-	height: 2px;
-	background-color: var(--accent);
-	opacity: 0;
-	transform: translateX(0%);
-	transition: all .150s ease-in-out;
-}
-
-.header__navigation-list__item .nav__link:hover::after {
-	transform: translateX(0);
-	opacity: 1;
-}
-
-.header__navigation-list__item .nav__link.active::after {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	width: 2rem;
-	height: 2px;
-	background-color: var(--accent);
-	opacity: 1;
-	transform: translateX(0);
+	padding: .2rem 0;
 }
 
 /*MAIN*/
@@ -313,8 +300,6 @@ main {
 	margin: 3rem 0;
 }
 
-
-
 .company__info-content {
 	margin-top: 1.5rem;
 	padding: 1.5rem;
@@ -338,8 +323,6 @@ main {
 	flex: 1;
 
 }
-
-
 
 .company__info-cards__item .item__title {
 	font-size: 1.3rem;
@@ -381,9 +364,6 @@ main {
 	margin-bottom: .3rem;
 }
 
-.services__row-item .button {}
-
-
 .services__row-item:hover:not(.services__row-item--full) {
 	box-shadow: var(--box-shadow-hover);
 	cursor: pointer;
@@ -415,8 +395,6 @@ main {
 .services__row {
 	display: flex;
 	flex-wrap: nowrap;
-
-
 }
 
 .services__item-wrapper {
@@ -427,7 +405,6 @@ main {
 
 .services__item-wrapper .item__description {
 	display: none;
-
 }
 
 .services__row-item.opened {
@@ -435,9 +412,7 @@ main {
 	width: 575px;
 	z-index: 9;
 	height: fit-content;
-
 }
-
 
 /*NEWS*/
 
@@ -455,7 +430,6 @@ main {
 	flex: 1 0 30%;
 	min-width: 320px;
 }
-
 
 .news__row-item .item__image {
 	max-height: 200px;
@@ -550,13 +524,25 @@ main {
 	margin-right: 2rem;
 }
 
-
 .footer__info-item {
 	color: var(--white);
 	font-size: .85rem;
 }
 
 /*PAGES*/
+
+.page__content-body {
+	flex: 1;
+}
+
+.page__content-wrapper {
+	display: flex;
+}
+
+.content__row {
+	padding: 1.5rem;
+	margin-bottom: 2rem;
+}
 
 .page__title {
 	background-color: var(--accent);
@@ -571,6 +557,7 @@ main {
 	font-weight: normal;
 	position: relative;
 	display: inline-block;
+
 }
 
 .page__title-body .title::after {
@@ -588,7 +575,113 @@ main {
 	margin: 2rem 0;
 }
 
+/*SIDEBAR*/
+
+.page__sidebar{
+
+}
+
+.page__sidebar .content__row{
+	padding: 2rem 3rem 2rem 2rem;
+}
+.page__sidebar-nav {
+
+}
+.page__sidebar-nav__list li {
+	margin-bottom: .5rem;
+
+
+}
+
+.page__sidebar-nav__list li:last-child {
+	margin: 0;
+}
+
+.page__sidebar-nav__list .nav__link {
+	padding: .2rem 0;
+	color: var(--gray);
+}
+
+.page__sidebar-nav__list .nav__link.active {
+	color: var(--accent);
+}
+
+
+/*TABLE*/
+.table {
+	width: 100%;
+	border-spacing: 2px;
+	border-collapse: collapse;
+	font-size: 14px;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-khtml-border-radius: 8px;
+	overflow: hidden;
+}
+
+.table tr {
+	width: auto;
+	border-bottom: 1px solid #f5f5f5;
+}
+
+.table .table__label {
+	width: 33%;
+	font-weight: 600;
+}
+
+.table .td {
+	padding: 8px 16px;
+}
+
+.table .table__title {
+	margin-bottom: 8px;
+}
+
+.table .row-name {
+	color: #1c327a;
+}
+
+/*ACCORDION*/
+
+.page__accordion {
+	margin-bottom: 1rem;
+}
+
+.page__accordion-title {
+	padding: 1rem;
+	box-shadow: var(--box-shadow);
+	border-radius: 1rem;
+	margin-bottom: 1rem;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+.page__accordion-content {
+	display: none;
+	padding: 1rem;
+}
+
+.page__accordion.active .page__accordion-content{
+	display: block;
+	animation: accordion .250s ease-in-out;
+}
+
+@keyframes accordion {
+	0% {
+
+		opacity: 0;
+	}
+	100% {
+
+		opacity: 1;
+
+}
+}
+
 /*NEWS*/
+
+
 
 /*CONTACTS*/
 
@@ -611,7 +704,7 @@ main {
 }
 
 .contacts__item-day {
-	color: #6d6d6d;
+	color: var(--gray);
 }
 
 .details .contacts__item-col {
@@ -635,7 +728,15 @@ main {
 	text-align: center;
 	display: none;
 	opacity: 0;
+	visibility: hidden;
+	will-change: transform;
 	transition: all 1s ease-in-out;
+}
+
+.services__content-item .item__content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .services__content-item.active {
@@ -645,6 +746,7 @@ main {
 	height: 100%;
 	position: absolute;
 	z-index: 2;
+	visibility: visible;
 	animation: fadeInFromNone .5s ease-in-out;
 }
 
@@ -714,7 +816,6 @@ main {
 	}
 }
 
-
 @keyframes fadeInFromNone {
 	0% {
 		display: none;
@@ -722,23 +823,6 @@ main {
 		width: 0;
 		height: 0;
 		border-radius: 2rem;
-
-<<<<<<< HEAD
-	30% {
-		display: block;
-		opacity: 0;
-		width: 50%;
-		height: 50%;
-		border-radius: 50%;
-	}
-	70% {
-		display: block;
-		opacity: 1;
-		width: 100%;
-		height: 100%;
-
-=======
->>>>>>> cad58308a36b96bc09acdefb17f80870e734ed7d
 	}
 
 	100% {
@@ -757,4 +841,6 @@ main {
 		opacity: 1;
 	}
 }
+
+
 
