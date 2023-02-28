@@ -2,8 +2,9 @@
 
 :root {
 	--accent: #14AAFF;
-	--gray: #3d3d3d;
+	--gray: #959595;
 	--text: #1E2337;
+	/*--text: #020728;*/
 	--white: #FAFAFA;
 	--black: #1C1C1C;
 	--box-bg: #F8FbFF;
@@ -141,8 +142,10 @@ main {
 	outline: none;
 	border: none;
 	cursor: pointer;
-	transition: all 1s ease;
+	transition: all .5s ease;
 }
+
+
 
 .title {
 	font-size: 1.5rem;
@@ -155,10 +158,19 @@ main {
 	background-color: var(--box-bg);
 }
 
-.row {
-	display: flex;
-	gap: 2rem;
+@supports (gap: 2rem) {
+	.row {
+		display: flex;
+		gap: 2rem;
+	}
 }
+
+@supports not (gap: 2rem) {
+	.row > * {
+		margin: 8px;
+	}
+}
+
 
 /*HEADER*/
 
@@ -206,33 +218,59 @@ main {
 .header__navigation-list__item {
 	margin-left: 2rem;
 	transition: all 1s ease-in;
+	position: relative;
 }
 
-.header__navigation-list__item a {
+.header__navigation-list__item:hover .navigation__sub-menu {
+	display: block;
+	animation: fadeInMenu .250s ease-in-out;
+}
+
+.header__navigation-list__item .navigation__sub-menu {
+	position: absolute;
+	padding: .5rem 1.5rem ;
+	left: -1rem;
+	display: none;
+	z-index: 2;
+}
+
+.header__navigation-list__item .navigation__sub-menu li {
+	text-align: left;
+	min-width: 180px;
+	margin: .5rem 0;
+}
+
+.header__navigation-list__item .navigation__sub-menu li .nav__link{
+	display: block;
+}
+
+.header__navigation-list__item .nav__link {
 	position: relative;
 	color: var(--text);
-	padding-bottom: 4px;
+	padding-bottom: .4rem;
+	font-weight: 500;
+	cursor: pointer;
 }
 
-.header__navigation-list__item a::after {
+.header__navigation-list__item .nav__link::after {
 	content: '';
 	position: absolute;
 	bottom: 0;
 	right: 0;
-	width: 2rem;
+	width: 100%;
 	height: 2px;
 	background-color: var(--accent);
 	opacity: 0;
-	transform: translateX(-100px);
-	transition: all .3s ease-in-out;
+	transform: translateX(0%);
+	transition: all .150s ease-in-out;
 }
 
-.header__navigation-list__item a:hover::after {
+.header__navigation-list__item .nav__link:hover::after {
 	transform: translateX(0);
 	opacity: 1;
 }
 
-.header__navigation-list__item a.active::after {
+.header__navigation-list__item .nav__link.active::after {
 	content: '';
 	position: absolute;
 	bottom: 0;
@@ -288,7 +326,7 @@ main {
 
 .company__info-cards {
 	margin-top: 2rem;
-
+	display: flex;
 }
 
 .company__info-cards__item {
@@ -313,7 +351,7 @@ main {
 .company__info-cards__item .item__subtitle {
 	color: var(--accent);
 	text-align: center;
-	font-size: .8em;
+	font-size: .95em;
 }
 
 /*SERVICES*/
@@ -324,19 +362,26 @@ main {
 .services__wrapper{
 	display: flex;
 	flex-wrap: wrap;
-	gap: 2rem;
 	position: relative;
 }
 .services__row{
 	flex-wrap: wrap;
 	z-index: 1;
+
 }
 .services__row-item {
 	padding: 1rem;
 	text-align: center;
 	transition: all .3s ease-in-out;
 	min-width: 260px;
+	flex: 1;
 }
+
+.services__row-item img {
+	margin-bottom: .3rem;
+}
+
+.services__row-item .button {}
 
 
 .services__row-item:hover:not(.services__row-item--full) {
@@ -351,8 +396,8 @@ main {
 }
 
 .services__row-item--full{
-	flex: 0 0 auto;
 	max-width: calc(50% - 1rem);
+	flex: 0 1 auto;
 }
 
 .services__row-item--full .item__title {
@@ -370,7 +415,7 @@ main {
 .services__row {
 	display: flex;
 	flex-wrap: nowrap;
-	gap: 2rem;
+
 
 }
 
@@ -413,9 +458,10 @@ main {
 
 
 .news__row-item .item__image {
-	max-height: 216px;
+	max-height: 200px;
 	width: 100%;
 	border-radius: 8px 8px 0 0;
+	object-fit: cover;
 }
 
 .news__row-item .item__body {
@@ -446,6 +492,10 @@ main {
 	margin: 2rem 0;
 }
 
+.news__more .button {
+	line-height: normal;
+}
+
 /*FOOTER*/
 
 .footer__main {
@@ -469,7 +519,7 @@ main {
 
 .footer__nav {
 	display: flex;
-	gap: 2rem;
+
 	width: 100%	;
 }
 
@@ -516,15 +566,14 @@ main {
 	padding: 5rem 0;
 }
 
-.title {
-	letter-spacing: 1px;
+.page__title-body .title {
 	font-size: 2rem;
 	font-weight: normal;
 	position: relative;
 	display: inline-block;
 }
 
-.title::after {
+.page__title-body .title::after {
 	content: '';
 	position: absolute;
 	bottom: 0;
@@ -554,7 +603,7 @@ main {
 }
 
 .contacts__item-col {
-	flex: 0 0 calc((100% / 6) - 2rem);
+	flex: 1 0 calc((100% / 6) - 2rem);
 }
 
 .contacts__item-col:last-child {
@@ -576,40 +625,105 @@ main {
 	right: 0;
 	bottom: 0;
 	display: flex;
-	gap: 2rem;
+
 }
 
-.services__content-col {
-	flex-basis: calc(50% - 2rem);
-	flex-grow: 1;
-	position: relative;
-}
-
-.services__content-col__item {
-	width: 100%;
+.services__content-item {
+	width: 50%;
 	height: 100%;
-	padding: 1.5rem;
+	padding: 2rem 1.5rem 1.5rem;
 	text-align: center;
 	display: none;
 	opacity: 0;
 	transition: all 1s ease-in-out;
 }
 
-.services__content-col__item.active {
+.services__content-item.active {
 	display: block;
 	opacity: 1;
+	width: 50%;
+	height: 100%;
 	position: absolute;
 	z-index: 2;
-	animation: fadeInFromNone 1s ease-in-out;
+	animation: fadeInFromNone .5s ease-in-out;
+}
+
+.services__content-item.tl.active  {
+	left: 0;
+	top: 0;
+}
+
+.services__content-item.tr {
+	right: 50%;
+}
+
+.services__content-item.tr.active  {
+	right: 50%;
+	top: 0;
+}
+
+.services__content-item.bl.active  {
+	left: 50%;
+	bottom: 0;
 
 }
+
+.services__content-item.br.active  {
+	right:  0;
+	bottom: 0;
+}
+
+.services__content-item .item__body {
+	animation: fadeInContent .5s ease-in;
+}
+
+.services__content-item .item__body .close__btn {
+	background: none;
+	outline: none;
+	border: none;
+	transform: rotate(45deg);
+	font-size: 2rem;
+	cursor: pointer;
+	color: var(--gray);
+	position: absolute;
+	top: .5rem;
+	right: 1rem;
+	transition: color .3s ease;
+}
+
+.services__content-item .item__body .close__btn:hover {
+	color: var(--text);
+}
+
+.services__content-item .item__title {
+	margin-bottom: 1rem;
+}
+
+@keyframes fadeInContent {
+	0% {
+		display: none;
+		transform: scale(0);
+	}
+	80% {
+		display: block;
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+
+	}
+}
+
 
 @keyframes fadeInFromNone {
 	0% {
 		display: none;
 		opacity: 0;
-	}
+		width: 0;
+		height: 0;
+		border-radius: 2rem;
 
+<<<<<<< HEAD
 	30% {
 		display: block;
 		opacity: 0;
@@ -623,11 +737,24 @@ main {
 		width: 100%;
 		height: 100%;
 
+=======
+>>>>>>> cad58308a36b96bc09acdefb17f80870e734ed7d
 	}
 
 	100% {
-		display: block;
 		opacity: 1;
 
 	}
 }
+
+@keyframes fadeInMenu {
+	0% {
+		display: none;
+		opacity: 0;
+	}
+	100% {
+		display: block;
+		opacity: 1;
+	}
+}
+
