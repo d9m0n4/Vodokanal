@@ -127,7 +127,7 @@
 							<div class="services__row-item tr services__row-item--full box">
 								<p class="item__title">Передача показаний индивидуальных приборов учета</p>
 								<span class="item__subtitle">Показания принимаются с 01 по 25 число каждого месяца</span>
-								<button class="button">Передать показания  </button>
+								<button data-target="readings" data-control="control" class="button">Передать показания</button>
 							</div>
 						</div>
 
@@ -135,7 +135,7 @@
 							<div class="services__row-item bl services__row-item--full box">
 								<p class="item__title">Передача показаний индивидуальных приборов учета</p>
 								<span class="item__subtitle">Показания принимаются с 01 по 25 число каждого месяца</span>
-								<button class="button">Передать показания</button>
+								<button class="button ">Передать показания</button>
 							</div>
 							<div data-target="meters" class="services__row-item br box">
 									<img src="images/icons/meterIcon.svg" alt="" draggable="false" class="item__icon">
@@ -156,7 +156,7 @@
 										</h2>
 										<div class="item__content">
 											<p>На данный момент квитанции за водоснабжение и водоотведение Вы можете оплатить одним из следующих способов:</p>
-											<ul >
+											<ul class="item__content-list">
 												<li>Касса по адресу г. Яранск ул. Кирова 36</li>
 												<li>Банк Сбер онлайн</li>
 												<li>Банк ВТБ</li>
@@ -175,6 +175,36 @@
 										<p>На данный момент работ на сетях водоснабжения не проводится</p>
 									</div>
 								</div>
+
+								<div data-box="readings" class="services__content-item bl box active">
+								<div class="item__body">
+									<button class="close__btn">+</button>
+									<h2 class="item__title">Передача показаний
+									</h2>
+									<form action="" method="post" class="page__form">
+										<div class="form__group">
+											<label>
+												<input type="text" class="form__group-input input" placeholder="ФИО">
+											</label>
+											<label>
+												<input type="text" class="form__group-input input" placeholder="Лицевой счет">
+											</label></div>
+										<div class="form__group">
+											<label>
+												<input type="text" class="form__group-input input" placeholder="Показания прибора учета">
+											</label>
+										</div>
+										<div class="form__group">
+											<label>
+												<input type="text" class="form__group-input input" placeholder="Показания второго прибора учета">
+											</label>
+										</div>
+										<div class="form__group">
+											<button class="form__group-button button">Передать показания</button>
+										</div>
+									</form>
+								</div>
+							</div>
 
 								<div data-box="meters" class="services__content-item bl box">
 									<div class="item__body">

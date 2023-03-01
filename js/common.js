@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     const toggleAccordion = (selector, control, activeClass) => {
         const accordions = document.querySelectorAll(selector)
-        if (accordions) {
+        if (accordions.length > 0) {
             accordions[0].classList.add(activeClass)
             accordions.forEach(acc => {
                 acc.addEventListener('click', (e) => {
@@ -62,7 +62,7 @@ const serviceItems = document.querySelectorAll('.services__row-item')
 
 serviceItems.forEach(item => {
     if (item.hasAttribute('data-target')) {
-        item.addEventListener('click', () => {
+        item.addEventListener('click', (e) => {
             const itemDataPath = item.getAttribute('data-target')
             showContent(itemDataPath)
         })
@@ -70,6 +70,7 @@ serviceItems.forEach(item => {
 })
 
 function showContent (path)  {
+
     if (path) {
         const wrapper = document.querySelector('.services')
         document.querySelectorAll(`[data-box]`).forEach(i => i.classList.remove('active'))
@@ -85,6 +86,18 @@ function closeContent(s) {
         s.classList.remove('active')
     })
 }
+
+const showModal = (control) => {
+    const controlButtons = document.querySelectorAll(`[${control}]`)
+    controlButtons.forEach(c => {
+        c.addEventListener('click', (e) => {
+            const currentTargetPath = e.currentTarget.getAttribute('data-target')
+            showContent(currentTargetPath)
+        })
+    })
+}
+
+showModal('data-control')
 
 class ServicesInfo {
     constructor(selector, options) {

@@ -74,17 +74,13 @@
 	.services__content-item.active {
 		width: 100%;
 		height: auto;
-		top: 0;
 		left: 0;
 		right: 0;
-		bottom: 0;
 	}
 
 	.services__content-item.bl.active {
 		left: 0;
 	}
-
-
 
 	.footer__nav {
 		flex-wrap: wrap;
