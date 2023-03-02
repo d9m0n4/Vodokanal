@@ -3,15 +3,18 @@
 :root {
 	--accent: #14AAFF;
 	--gray: #959595;
-	--text: #1E2337;
+	/*--text: #1E2337;*/
+	--accenDark: #1E2337;
+	--text: #030501;
 	/*--text: #020728;*/
 	--white: #FAFAFA;
 	--black: #1C1C1C;
-	--box-bg: #F8FbFF;
+	--box-bg: #fff;
+	/*--box-bg: rgba(251, 251, 251, 100);*/
 	--gradient: linear-gradient(90deg, #187DC7 6.75%, #2D9CDB 69.75%);
 	--gradientRvs: linear-gradient(90deg, #2D9CDB 6.75%, #187DC7 69.75%);
-	--box-shadow: -8px -8px 18px rgba(251, 251, 251, 0.15), 8px 8px 18px rgba(98, 147, 195, 0.15);
-	--box-shadow-hover: -8px -8px 20px rgba(251, 251, 251, 0.15), 12px 12px 22px rgba(67, 135, 183, 0.25);
+	--box-shadow: -4px -4px 18px rgba(198, 209, 220, 0.15), 6px 6px 16px rgba(24, 125, 199, 0.15);
+	--box-shadow-hover: -8px -8px 22px rgba(198, 209, 220, 0.15), 10px 10px 22px rgba(67, 135, 183, 0.25);
 	--regular-text: 16px;
 	--lineheight: 1.65;
 	--userfont: Montserrat, sans-serif;
@@ -97,6 +100,11 @@ a {
 
 ul {
 	list-style: none;
+}
+
+ul li::marker {
+	color: var(--accent);
+	width: 2px;
 }
 
 /* USER STYLES */
@@ -220,7 +228,7 @@ main {
 /*HEADER*/
 
 .header__top {
-	background: var(--text);
+	background: var(--accenDark);
 	padding: .5rem 0 .5rem 0;
 	font-size: 14px;
 }
@@ -287,6 +295,7 @@ main {
 
 .header__navigation-list__item .nav__link {
 	padding: .2rem 0;
+	white-space: nowrap;
 }
 
 /*MAIN*/
@@ -411,9 +420,9 @@ main {
 }
 
 .services__row-item--full .item__subtitle {
-	font-size: .75rem;
+	font-size: .85rem;
 	display: block;
-	margin: 16px 0;
+	margin: .7rem 0;
 	color: var(--gray);
 }
 
@@ -619,7 +628,7 @@ main {
 /*FOOTER*/
 
 .footer__main {
-	background-color: var(--text);
+	background-color: var(--accenDark);
 	padding: 2rem 0;
 }
 
@@ -725,7 +734,7 @@ main {
 /*SIDEBAR*/
 
 .page__sidebar{
-
+	width: 25%;
 }
 
 .page__sidebar .content__row{
@@ -799,6 +808,10 @@ main {
 	padding: 8px 16px;
 }
 
+.table .td.center {
+	text-align: center;
+}
+
 .table .table__title {
 	margin-bottom: 8px;
 }
@@ -836,13 +849,10 @@ main {
 
 @keyframes accordion {
 	0% {
-
 		opacity: 0;
 	}
 	100% {
-
 		opacity: 1;
-
 }
 }
 
@@ -883,7 +893,6 @@ main {
 	0% {
 		display: none;
 		transform: scale(0);
-
 	}
 	80% {
 		display: block;
@@ -891,7 +900,6 @@ main {
 	}
 	100% {
 		transform: scale(1);
-
 	}
 }
 
@@ -906,7 +914,6 @@ main {
 
 	100% {
 		opacity: 1;
-
 	}
 }
 

@@ -50,6 +50,10 @@
 	.header__main-navigation {
 		display: none;
 	}
+	
+	.page__sidebar {
+		display: none;
+	}
 
 	.company__info-cards {
 		flex-wrap: wrap;
