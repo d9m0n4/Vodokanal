@@ -64,35 +64,50 @@ serviceItems.forEach(item => {
     if (item.hasAttribute('data-target')) {
         item.addEventListener('click', (e) => {
             const itemDataPath = item.getAttribute('data-target')
-            showContent(itemDataPath)
+            const modal = document.querySelector('.modal')
+            modal.classList.add('active')
+
+            showContent(itemDataPath, modal)
         })
     }
 })
 
-function showContent (path)  {
-
+function showContent (path, modal)  {
     if (path) {
-        const wrapper = document.querySelector('.services')
+        modal.classList.add('active')
+        // const wrapper = document.querySelector('.services')
         document.querySelectorAll(`[data-box]`).forEach(i => i.classList.remove('active'))
         const currentContent = document.querySelector(`[data-box=${path}]`)
         currentContent.classList.add('active')
-        closeContent(currentContent)
-        scrollToTopOfElement(currentContent, wrapper)
+        closeContent(currentContent, modal)
+        // scrollToTopOfElement(currentContent, wrapper)
     }
 }
 
-function closeContent(s) {
+const modalOverlayClick = (overlay, modalRoot) => {
+    document.querySelector(overlay).addEventListener('click', (e) => {
+        if (!e.target.closest('.modal__content-item' )) {
+            document.querySelector(modalRoot).classList.remove('active')
+        }
+    })
+}
+
+modalOverlayClick('.modal__overlay', '.modal')
+
+function closeContent(s, modal) {
     s.querySelector('.close__btn').addEventListener('click', (e) => {
+        modal.classList.remove('active')
         s.classList.remove('active')
     })
 }
 
 const showModal = (control) => {
     const controlButtons = document.querySelectorAll(`[${control}]`)
+    const modal = document.querySelector('.modal')
     controlButtons.forEach(c => {
         c.addEventListener('click', (e) => {
             const currentTargetPath = e.currentTarget.getAttribute('data-target')
-            showContent(currentTargetPath)
+            showContent(currentTargetPath, modal)
         })
     })
 }
@@ -115,3 +130,14 @@ class ServicesInfo {
 }
 
 const si = new ServicesInfo('.services__wrapper')
+
+const mobileNav = document.querySelector('.mobile__navigation')
+const burgerBtn = document.querySelector('.mobile__burger')
+const menu = document.querySelector('.header__navigation-list').cloneNode(true)
+
+burgerBtn.addEventListener('click', (e) => {
+    const target = e.currentTarget
+    target.classList.toggle('active')
+    mobileNav.classList.toggle('open')
+    mobileNav.appendChild(menu)
+})

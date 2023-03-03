@@ -50,6 +50,10 @@
 	.header__main-navigation {
 		display: none;
 	}
+
+	.mobile__navigation .mobile__burger {
+		display: block;
+	}
 	
 	.page__sidebar {
 		display: none;
