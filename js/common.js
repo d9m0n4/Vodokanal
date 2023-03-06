@@ -7,6 +7,13 @@ window.addEventListener('DOMContentLoaded', function () {
   // }
   // ymaps.ready(mapInit)
 
+  setTimeout(() => {
+    const header = document.querySelector('.header');
+    const headerHeight = header.getBoundingClientRect().height;
+    document.querySelector(':root').style.setProperty('--header-height', `${headerHeight}px`);
+  }, 500)
+
+
   const toggleAccordion = (selector, control, activeClass) => {
     const accordions = document.querySelectorAll(selector);
     if (accordions.length > 0) {
@@ -22,115 +29,82 @@ window.addEventListener('DOMContentLoaded', function () {
     }
   };
   toggleAccordion('.page__accordion', '.page__accordion-title', 'active');
+
+  const mobileMenu = (burger, navContainer, mainMenu) => {
+      const burgerBtn = document.querySelector(burger)
+      const mobileNavContainer = document.querySelector(navContainer)
+      const menuListCopy = document.querySelector(mainMenu).cloneNode(true)
+
+      const toggleMenu = (e) => {
+        const target = e.currentTarget
+        mobileNavContainer.appendChild(menuListCopy)
+        document.body.classList.toggle('scroll--off');
+        target.classList.toggle('active');
+        mobileNavContainer.classList.toggle('open');
+      }
+
+      burgerBtn.addEventListener('click', toggleMenu)
+
+  }
+  mobileMenu('.mobile__burger', '.mobile__navigation', '.header__navigation-list')
+
+  class Modal {
+    constructor(controlBtn, options) {
+      this.options = options
+      this.controlBtn = controlBtn
+      this.modalContent = null
+      this.setup()
+      this.events()
+    }
+
+    setup() {
+      this.btns = document.querySelectorAll(`[${this.controlBtn}]`)
+      this.modal = document.querySelector('.modal')
+    }
+
+    modalOpen(modalContent) {
+      modalContent.classList.add('active')
+      this.modal.classList.add('active')
+    }
+
+    events() {
+      this.btns.forEach(el => {
+        el.addEventListener('click', (e) => {
+          const currentBtn = e.currentTarget
+          const currentPath = currentBtn.getAttribute('data-services');
+          this.modalContent = document.querySelector(`[data-box='${currentPath}']`)
+          this.modalOpen(this.modalContent)
+        })
+      })
+
+      if (this.modal) {
+        this.modal.addEventListener('click', (e) => {
+          const target = e.target
+          if (target.closest('.close__btn') || e.target.classList.contains('modal__overlay') ) {
+            this.modalClose()
+          }
+        })
+      }
+
+      window.addEventListener('keydown', (e) => {
+        if (this.isModalOpened) {
+          if (e.key === 'Escape') {
+            this.modalClose()
+          }
+        }
+      })
+    }
+
+    modalClose() {
+      this.modal.classList.remove('active')
+      this.modalContent.classList.remove('active')
+    }
+
+    get isModalOpened() {
+      return this.modal.classList.contains('active')
+    }
+
+  }
+  const modal = new Modal('data-services')
 });
 
-// const elements = document.querySelectorAll('.services__row-item')
-// const de = document.querySelectorAll('.item__description')
-//
-// elements.forEach(element => {
-//     function toggleClassName(e) {
-//         let elem = e.currentTarget
-//         elements.forEach(d => d.classList.remove('opened'))
-//         elem.classList.toggle('opened')
-//
-//     }
-//     element.addEventListener('click', toggleClassName)
-// })
-
-// const header = document.querySelector('.header__main')
-//
-// window.addEventListener('scroll', function() {
-//     // console.log(header.getBoundingClientRect().top)
-//     console.log(window.scrollY > header.getBoundingClientRect().top)
-//     // if(window.scrollY > header.getBoundingClientRect().top) {
-//     //     header.classList.add('header__fixed')
-//     // } else {
-//     //     header.classList.remove('header__fixed')
-//     // }
-// })
-
-const scrollToTopOfElement = (el, elementContainer) => {
-  if (el.parentNode.getBoundingClientRect().top < 0) {
-    elementContainer.scrollIntoView({ block: 'start' });
-  }
-};
-
-const serviceItems = document.querySelectorAll('.services__row-item');
-
-serviceItems.forEach((item) => {
-  if (item.hasAttribute('data-target')) {
-    item.addEventListener('click', (e) => {
-      const itemDataPath = item.getAttribute('data-target');
-      const modal = document.querySelector('.modal');
-      modal.classList.add('active');
-
-      showContent(itemDataPath, modal);
-    });
-  }
-});
-
-function showContent(path, modal) {
-  if (path) {
-    modal.classList.add('active');
-    // const wrapper = document.querySelector('.services')
-    document.querySelectorAll(`[data-box]`).forEach((i) => i.classList.remove('active'));
-    const currentContent = document.querySelector(`[data-box=${path}]`);
-    currentContent.classList.add('active');
-    closeContent(currentContent, modal);
-    // scrollToTopOfElement(currentContent, wrapper)
-  }
-}
-
-function closeContent(s, modal) {
-  s.querySelector('.close__btn').addEventListener('click', (e) => {
-    modal.classList.remove('active');
-    s.classList.remove('active');
-  });
-}
-
-const showModal = (control) => {
-  const controlButtons = document.querySelectorAll(`[${control}]`);
-  const modal = document.querySelector('.modal');
-  controlButtons.forEach((c) => {
-    c.addEventListener('click', (e) => {
-      const currentTargetPath = e.currentTarget.getAttribute('data-target');
-      showContent(currentTargetPath, modal);
-    });
-  });
-};
-
-showModal('data-control');
-
-class ServicesInfo {
-  constructor(selector, options) {
-    this.selector = selector;
-    this.options = options;
-  }
-
-  init() {
-    console.log(this);
-  }
-
-  log() {
-    console.log(this.selector);
-  }
-}
-
-const si = new ServicesInfo('.services__wrapper');
-
-const mobileNav = document.querySelector('.mobile__navigation');
-const burgerBtn = document.querySelector('.mobile__burger');
-const menu = document.querySelector('.header__navigation-list').cloneNode(1);
-
-const header = document.querySelector('.header');
-const headerHeight = header.offsetHeight;
-document.querySelector(':root').style.setProperty('--header-height', `${headerHeight}px`);
-
-burgerBtn.addEventListener('click', (e) => {
-  const target = e.currentTarget;
-  mobileNav.appendChild(menu);
-  mobileNav.style.height = header.scrollHeight;
-  document.body.classList.toggle('scroll--off');
-  target.classList.toggle('active');
-  mobileNav.classList.toggle('open');
-});

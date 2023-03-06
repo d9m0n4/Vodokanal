@@ -108,6 +108,9 @@
   .footer__nav-link {
     padding: 0 16px;
   }
+  .news__row-item {
+    flex: 0 0 calc(100% / 2 - 1rem);
+  }
 }
 
 /* sm <= Medium (md) */
@@ -119,6 +122,12 @@
     width: 100%;
     max-width: 100%;
     font-size: calc(var(--index) * 2.5);
+  }
+  .company__info-cards__item {
+    flex-basis: 100%;
+  }
+  .news__row-item {
+    flex: 0 0 100%;
   }
 }
 
@@ -159,9 +168,6 @@
     text-align: justify;
   }
 
-  .company__info-cards__item {
-    flex-basis: 100%;
-  }
 
   .footer__nav-item {
     flex-basis: 100%;

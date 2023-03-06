@@ -72,32 +72,7 @@
               <span></span>
             </button>
           </div>
-          <nav class="mobile__navigation">
-            <ul class="header__navigation-list">
-              <li class="header__navigation-list__item">
-                <a href="about.html" class="nav__link">О предприятии</a>
-              </li>
-              <li class="header__navigation-list__item">
-                <a href="news.html" class="nav__link">Новости</a>
-              </li>
-              <li class="header__navigation-list__item">
-                <a class="nav__link">Абонентам</a>
-                <ul class="navigation__sub-menu box">
-                  <li><a href="tarif.html" class="nav__link">Тарифы</a></li>
-                  <li><a href="standards.html" class="nav__link">Нормативы</a></li>
-                  <li><a href="services.html" class="nav__link">Услуги</a></li>
-                  <li><a href="quality.html" class="nav__link">Показатели качества</a></li>
-                  <li><a href="connect.html" class="nav__link">Подключение к сетям</a></li>
-                </ul>
-              </li>
-              <li class="header__navigation-list__item">
-                <a href="" class="nav__link">Документы</a>
-              </li>
-              <li class="header__navigation-list__item">
-                <a href="contacts.html" class="nav__link">Контакты</a>
-              </li>
-            </ul>
-          </nav>
+          <nav class="mobile__navigation"></nav>
         </div>
       </div>
     </header>
@@ -155,11 +130,11 @@
         <div class="container">
           <div class="services__wrapper row">
             <div class="services__row row">
-              <div data-target="payments" class="services__row-item box">
+              <div data-services="payments" class="services__row-item box">
                 <img src="images/icons/payments.svg" alt="" draggable="false" class="item__icon" />
                 <p class="item__title">Способы оплаты квитанций</p>
               </div>
-              <div data-target="works" class="services__row-item box">
+              <div data-services="works" class="services__row-item box">
                 <img src="images/icons/works.svg" alt="" draggable="false" class="item__icon" />
                 <p class="item__title">Отключение водоснабжения</p>
               </div>
@@ -168,7 +143,7 @@
                 <span class="item__subtitle"
                   >Показания принимаются с 01 по 25 число каждого месяца</span
                 >
-                <button data-target="readings" data-control="control" class="button">
+                <button data-services="readings" data-control="control" class="button">
                   Передать показания
                 </button>
               </div>
@@ -180,34 +155,36 @@
       <section class="news">
         <div class="container">
           <h2 class="news__title title">Последние новости</h2>
-          <div class="news__row row">
-            <div class="news__row-item box">
+          <div class="news__row ">
+            <a href="_news.html" class="news__row-item box">
               <img src="images/main/1.webp" alt="" class="item__image image" />
               <div class="item__body">
-                <a href="#" class="item__body-link"
-                  >Городская баня возобновляет работу с 18 августа в прежнем режиме</a
+                <p class="news__item-text"
+                  >Городская баня возобновляет работу с 18 августа в прежнем режиме</p
                 >
               </div>
               <span class="item__date">20 февраля 2023</span>
-            </div>
-            <div class="news__row-item box">
+            </a>
+            <a href="_news.html" class="news__row-item box">
               <img src="images/main/1.webp" alt="" class="item__image image" />
               <div class="item__body">
-                <a href="#" class="item__body-link"
-                  >Городская баня возобновляет работу с 18 августа в прежнем режиме</a
+                <p class="news__item-text"
+                  >Городская баня возобновляет работу с 18 августа в прежнем режиме</p
                 >
               </div>
               <span class="item__date">20 февраля 2023</span>
-            </div>
-            <div class="news__row-item box">
+            </a>
+            <a href="_news.html" class="news__row-item box">
               <img src="images/main/1.webp" alt="" class="item__image image" />
               <div class="item__body">
-                <a href="#" class="item__body-link"
-                  >Городская баня возобновляет работу с 18 августа в прежнем режиме</a
+                <p class="news__item-text"
+                  >Городская баня возобновляет работу с 18 августа в прежнем режиме</p
                 >
               </div>
               <span class="item__date">20 февраля 2023</span>
-            </div>
+            </a>
+
+
           </div>
           <div class="news__more">
             <a href="news.html" class="button">Все новости</a>
