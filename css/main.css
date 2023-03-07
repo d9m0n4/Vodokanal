@@ -672,16 +672,16 @@ main {
 
 .news__row {
   margin-top: 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
 }
 .news__row-item {
-  flex: 0 0 calc(100% / 3 - 1.2rem);
   cursor: pointer;
   color: var(--text);
   transition: color .250s ease-in-out;
-  margin-bottom: 1.5rem;
 }
 
 .news__row-item:hover .news__item-text{

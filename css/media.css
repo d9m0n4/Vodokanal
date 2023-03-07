@@ -38,6 +38,10 @@
     gap: 1rem;
     font-size: 0.85rem;
   }
+
+  .news__row {
+    grid-gap: 1rem;
+  }
 }
 
 /* md <= Large (lg) */
@@ -108,8 +112,9 @@
   .footer__nav-link {
     padding: 0 16px;
   }
-  .news__row-item {
-    flex: 0 0 calc(100% / 2 - 1rem);
+  .news__row{
+    grid-template-columns: repeat(2, 1fr);
+    -ms-grid-columns: 1fr 1fr
   }
 }
 
@@ -126,8 +131,8 @@
   .company__info-cards__item {
     flex-basis: 100%;
   }
-  .news__row-item {
-    flex: 0 0 100%;
+  .news__row {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -201,6 +206,11 @@
 
   .page__content-body {
     max-width: 100%;
+  }
+
+  .news__row {
+    grid-template-columns: repeat(1, 1fr);
+    -ms-grid-columns: 1fr
   }
 }
 
