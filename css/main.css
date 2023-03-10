@@ -244,6 +244,12 @@ main {
   font-weight: 500;
 }
 
+.colored {
+  padding: 1rem;
+  background-color: var(--accent);
+  color: var(--white);
+}
+
 .box {
   box-shadow: var(--box-shadow);
   border-radius: 8px;
@@ -818,6 +824,13 @@ main {
 
 .page__title {
   background-color: var(--accent);
+}
+
+.page__title-cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 600px;
 }
 
 .page__title-body {
