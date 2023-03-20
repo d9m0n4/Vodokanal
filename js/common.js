@@ -8,10 +8,12 @@ window.addEventListener('DOMContentLoaded', function () {
   // ymaps.ready(mapInit)
   const mainForm = document.querySelector('.page__form')
 
-  mainForm.addEventListener('submit', (e) => {
-    e.preventDefault()
-    console.log(e);
-  })
+  if (mainForm) {
+    mainForm.addEventListener('submit', (e) => {
+      e.preventDefault()
+      console.log(e);
+    })
+  }
 
   setTimeout(() => {
     const header = document.querySelector('.header');
