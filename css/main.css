@@ -818,6 +818,10 @@ main {
   display: flex;
 }
 
+.page__text {
+  padding: 1rem;
+}
+
 .content__row {
   padding: 1.5rem;
   margin-bottom: 2rem;
@@ -910,6 +914,11 @@ main {
 }
 
 /*TABLE*/
+
+.table__wrapper {
+  margin-top: 1rem;
+}
+
 .table {
   width: 100%;
   border-spacing: 2px;
@@ -937,6 +946,10 @@ main {
   padding: 8px 16px;
 }
 
+.table .td__bold {
+  font-weight: bold;
+}
+
 .table .td.center {
   text-align: center;
 }
@@ -952,7 +965,7 @@ main {
 /*ACCORDION*/
 
 .page__accordion {
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 
 .page__accordion-title {
