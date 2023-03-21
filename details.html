@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="css/media.css">
     <script src="libs/jquery/jquery-3.6.0.min.js" defer></script>
     <script src="js/common.js" defer></script>
-
 </head>
 
 <body>
@@ -22,9 +21,7 @@
 <header class="header">
     <div class="header__top">
         <div class="header__top-links container">
-            <a href="https://yandex.ru/maps/org/103389193980" target="_blank"
-            >г. Яранск ул. Кирова д. 36</a
-            >
+            <a href="https://yandex.ru/maps/org/103389193980" target="_blank">г. Яранск ул. Кирова д. 36</a>
             <a href="tel:+7 (800) 123 45 56">8 (800) 123 45 56</a>
         </div>
     </div>
@@ -36,7 +33,12 @@
             <nav class="header__main-navigation">
                 <ul class="header__navigation-list">
                     <li class="header__navigation-list__item">
-                        <a href="about.html" class="nav__link">О предприятии</a>
+                        <a class="nav__link">О предприятии</a>
+                        <ul class="navigation__sub-menu box">
+                            <li><a href="about.html" class="nav__link">История</a></li>
+                            <li><a href="details.html" class="nav__link">Реквизиты</a></li>
+                            <li><a href="#" class="nav__link">Вакансии</a></li>
+                        </ul>
                     </li>
                     <li class="header__navigation-list__item">
                         <a href="news.html" class="nav__link">Новости</a>
@@ -78,93 +80,117 @@
     </section>
 
     <section class="page__content">
-        <div class="container">
-            <div class="page__content-body">
+        <div class="page__content-wrapper row container">
+            <aside class="page__sidebar">
                 <div class="content__row box">
-                    <p>Учредитель – Яранское городское поселение</p>
-                    <p> Руководство:
-
-                    </p>
-                    <p>Директор Шестаков Андрей Павлович 2-14-84</p>
-                    <p> Главный бухгалтер Фёдорова Валентина Николаевна 2-17-89</p>
-                   <div class="table__wrapper">
-                       <table class="table">
-                           <tbody>
-                           <tr>
-                               <td class="td td__bold"> Полное наименование организации  </td>
-                               <td class="td"><p> Муниципальное унитарное предприятие «Водоканал»</p></td>
-                           </tr>
-                           <tr>
-                               <td class="td td__bold"> Сокращенное наименование организации (при наличии) </td>
-                               <td class="td"><p> МУП «Водоканал» </p></td>
-                           </tr>
-                           <tr>
-                               <td class="td td__bold"> Идентификационный номер налогоплательщика (ИНН)  </td>
-                               <td class="td"><p>  4339008240 </p></td>
-                           </tr>
-                           <tr>
-                               <td class="td td__bold"> Государственный регистрационный номер и дата государственной
-                                   регистрации
-                               </td>
-                               <td class="td"><p>  1064339004905
-                                   29.08.2006
-                               </p></td>
-                           </tr>
-                           <tr>
-                               <td class="td td__bold">Адрес местонахождения
-                                   (юридический адрес в соответствии с учредительными документами)
-                               </td>
-                               <td class="td">
-                                   612260, Кировская область, Яранский район, город Яранск, улица Кирова, дом № 36
-                               </td>
-                           </tr>
-                           <tr>
-                               <td class="td td__bold">Адрес фактического местонахождения </td>
-                               <td class="td">  612260, Кировская область, Яранский район, город Яранск, улица Кирова, дом № 36</td>
-                           </tr>
-                           </tbody>
-                       </table>
-                   </div>
-                    <div class="table__wrapper">
-                        <table class="table">
-                            <tbody>
-                            <tr>
-                                <td class="td td__bold"> Расчетный счет (открыт в АО КБ «Хлынов») </td>
-                                <td class="td"><p> 40702810500310090108 </p></td>
-                            </tr>
-                            <tr>
-                                <td class="td td__bold"> БИК   </td>
-                                <td class="td"><p> 043304711 </p></td>
-                            </tr>
-                            <tr>
-                                <td class="td td__bold"> Кор.сч   </td>
-                                <td class="td"><p>  30101810100000000711 </p></td>
-                            </tr>
-                            <tr>
-                                <td class="td td__bold"> ДЛЯ РАСЧЕТОВ ЗА КОММУНАЛЬНЫЕ УСЛУГИ:
-                                </td>
-
-                            </tr>
-                            <tr>
-                                <td class="td td__bold">р/сч (открыт в Кировском РФ  ОАО «Россельхозбанк» г. Киров)
-                                </td>
-                                <td class="td">
-                                    40702810022060000109
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="td td__bold">БИК  </td>
-                                <td class="td">  043304787</td>
-                            </tr>
-                            <tr>
-                                <td class="td td__bold">к/с   </td>
-                                <td class="td">  30101810600000000787 </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <nav class="page__sidebar-nav">
+                        <ul class="page__sidebar-nav__list">
+                            <li><a href="#" class="nav__link">История</a></li>
+                            <li><a href="details.html" class="nav__link active">Реквизиты</a></li>
+                            <li><a href="#" class="nav__link">Вакансии</a></li>
+                        </ul>
+                    </nav>
                 </div>
-            </div>
+            </aside>
+            <article class="page__content-body">
+                <div class="content__row box">
+                    <h3 class="page__info-heading tc">Учредитель – Яранское городское поселение</h3>
+
+                    <div class="page__info">
+                        <div class="page__info-row">
+                            <div class="page__info-col tc">
+                                <h3>Шестаков Андрей Павлович</h3>
+                                <p>Директор</p>
+                                <p> <a href="tel:88336721484">8(83367)2-14-84</a></p>
+                            </div>
+                            <div class="page__info-col tc">
+                                <h3> Фёдорова Валентина Николаевна</h3>
+                                <p>Главный бухгалтер</p>
+                                <p><a href="tel:88336721789">8(83367)2-17-89</a></p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="page__info">
+
+                           <div class="page__info-row">
+                               <div class="page__info-col page__info-title">Полное наименование организации</div>
+                               <div class="page__info-col">Муниципальное унитарное предприятие «Водоканал»</div>
+                           </div>
+
+                           <div class="page__info-row">
+                               <div class="page__info-col page__info-title">Сокращенное наименование организации (при наличии)</div>
+                               <div class="page__info-col">МУП «Водоканал»</div>
+                           </div>
+
+                           <div class="page__info-row">
+                               <div class="page__info-col page__info-title">Идентификационный номер налогоплательщика (ИНН)</div>
+                               <div class="page__info-col">4339008240</div>
+                           </div>
+
+                           <div class="page__info-row">
+                               <div class="page__info-col page__info-title">Государственный регистрационный номер и дата государственной
+                                   регистрации</div>
+                               <div class="page__info-col">1064339004905
+                                   29.08.2006</div>
+                           </div>
+
+                           <div class="page__info-row">
+                               <div class="page__info-col page__info-title">Адрес местонахождения
+                                   (юридический адрес в соответствии с учредительными документами)</div>
+                               <div class="page__info-col">612260, Кировская область, Яранский район, город Яранск, улица Кирова, дом № 36</div>
+                           </div>
+
+                           <div class="page__info-row">
+                               <div class="page__info-col page__info-title">Адрес фактического местонахождения</div>
+                               <div class="page__info-col">612260, Кировская область, Яранский район, город Яранск, улица Кирова, дом № 36</div>
+                           </div>
+
+                       </div>
+                    <div class="page__info">
+
+                        <div class="page__info-row">
+                            <div class="page__info-col page__info-title">Расчетный счет (открыт в АО КБ «Хлынов»)</div>
+                            <div class="page__info-col">40702810500310090108</div>
+                        </div>
+
+                        <div class="page__info-row">
+                            <div class="page__info-col page__info-title">БИК</div>
+                            <div class="page__info-col">043304711</div>
+                        </div>
+
+                        <div class="page__info-row">
+                            <div class="page__info-col page__info-title">Кор.сч
+                            </div>
+                            <div class="page__info-col">30101810100000000711</div>
+                        </div>
+
+                        <div class="page__info-row">
+                            <div class="page__info-col page__info-title">ДЛЯ РАСЧЕТОВ ЗА КОММУНАЛЬНЫЕ УСЛУГИ:
+                            </div>
+                        </div>
+
+                        <div class="page__info-row">
+                            <div class="page__info-col page__info-title">р/сч (открыт в Кировском РФ ОАО «Россельхозбанк» г. Киров)	</div>
+                            <div class="page__info-col">40702810022060000109
+                            </div>
+                        </div>
+
+                        <div class="page__info-row">
+                            <div class="page__info-col page__info-title">БИК</div>
+                            <div class="page__info-col">043304787</div>
+                        </div>
+
+                        <div class="page__info-row">
+                            <div class="page__info-col page__info-title">к/с	</div>
+                            <div class="page__info-col">30101810600000000787</div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </article>
         </div>
     </section>
 
@@ -191,25 +217,20 @@
                         <div class="footer__heading">Контакты</div>
                         <ul class="footer__nav-list">
                             <li>
-                                <span>Диспетчер</span>
-                                <a href="#" class="footer__nav-link">8 (83367) 2-22-22 </a>
+                                <span>Директор</span>
+                                <a href="#" class="footer__nav-link">8 (83367) 2-14-84 </a>
                             </li>
                             <li>
-                                <span>Бухгалтерия</span>
-                                <a href="#" class="footer__nav-link">8 (83367) 2-22-22 </a>
+                                <span>Диспетчер</span>
+                                <a href="#" class="footer__nav-link">8 (83367) 2-14-63 </a>
                             </li>
+
                             <li>
                                 <span>Касса</span>
-                                <a href="#" class="footer__nav-link">8 (83367) 2-22-22 </a>
+                                <a href="#" class="footer__nav-link">8 (83367) 2-22-46 </a>
                             </li>
-                            <li>
-                                <span>Юрист</span>
-                                <a href="#" class="footer__nav-link">8 (83367) 2-22-22 </a>
-                            </li>
-                            <li>
-                                <span>Директор</span>
-                                <a href="#" class="footer__nav-link">8 (83367) 2-22-22 </a>
-                            </li>
+
+
                         </ul>
                     </div>
 

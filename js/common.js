@@ -98,10 +98,8 @@ window.addEventListener('DOMContentLoaded', function () {
       }
 
       window.addEventListener('keydown', (e) => {
-        if (this.isModalOpened) {
-          if (e.key === 'Escape') {
+        if (this.isModalOpened && e.key === 'Escape') {
             this.modalClose()
-          }
         }
       })
     }
