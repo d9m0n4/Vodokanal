@@ -6,6 +6,14 @@ window.addEventListener('DOMContentLoaded', function () {
   //     })
   // }
   // ymaps.ready(mapInit)
+  const mainForm = document.querySelector('.page__form')
+
+  if (mainForm) {
+    mainForm.addEventListener('submit', (e) => {
+      e.preventDefault()
+      console.log(e);
+    })
+  }
 
   setTimeout(() => {
     const header = document.querySelector('.header');
@@ -47,6 +55,9 @@ window.addEventListener('DOMContentLoaded', function () {
 
   }
   mobileMenu('.mobile__burger', '.mobile__navigation', '.header__navigation-list')
+
+
+
 
   class Modal {
     constructor(controlBtn, options) {
