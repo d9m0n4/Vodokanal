@@ -130,18 +130,16 @@ ul {
 }
 
 .p {
-  margin: .5rem 0;
+  margin: 0.5rem 0;
 }
 
 .heading {
-  padding: .5rem 0;
+  padding: 0.5rem 0;
 }
 
 .tc {
   text-align: center;
 }
-
-
 
 ul li::marker {
   color: var(--accent);
@@ -496,8 +494,7 @@ main {
   font-size: 2rem;
   font-weight: bold;
   color: var(--white);
-  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.774), 
-                -4px -4px 10px rgba(0, 0, 0, 0.692);
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.774), -4px -4px 10px rgba(0, 0, 0, 0.692);
   letter-spacing: 1.2px;
 }
 
@@ -635,7 +632,7 @@ main {
 }
 
 .form__group-input.checkbox {
-  display: none;
+  opacity: 0;
 }
 
 .form__group-button {
@@ -693,14 +690,13 @@ main {
 .news__row-item {
   cursor: pointer;
   color: var(--text);
-  transition: color .250s ease-in-out;
+  transition: color 0.25s ease-in-out;
 }
 
-.news__row-item:hover .news__item-text{
-  transition: color .250s ease-in-out;
+.news__row-item:hover .news__item-text {
+  transition: color 0.25s ease-in-out;
   color: var(--accent);
 }
-
 
 .news__row-item .item__image {
   max-height: 200px;
@@ -749,8 +745,8 @@ main {
 .news__item-content .news__date {
   position: absolute;
   right: 1rem;
-  top: 0  ;
-  font-size: .9rem;
+  top: 0;
+  font-size: 0.9rem;
   color: var(--gray);
 }
 
@@ -932,13 +928,12 @@ main {
 }
 
 .page__info-col {
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   width: 50%;
 }
 
-
 .page__info-col p {
-  margin: .5rem 0;
+  margin: 0.5rem 0;
 }
 
 .page__info-col a {

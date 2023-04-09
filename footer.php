@@ -118,15 +118,17 @@
             <form class="page__form">
               <div class="form__group">
                 <label>
-                  <input type="text" class="form__group-input input" placeholder="ФИО" />
+                  <input name="fio" required type="text" class="form__group-input input" placeholder="ФИО" />
                 </label>
                 <label>
-                  <input type="text" class="form__group-input input" placeholder="Лицевой счет" />
+                  <input name="account" required type="text" class="form__group-input input" placeholder="Лицевой счет" />
                 </label>
               </div>
               <div class="form__group">
                 <label>
                   <input
+                    name="indicationFirst"
+                    required
                     type="text"
                     class="form__group-input input"
                     placeholder="Показания прибора учета"
@@ -136,6 +138,7 @@
               <div class="form__group">
                 <label>
                   <input
+                    name="indicationSecond"
                     type="text"
                     class="form__group-input input"
                     placeholder="Показания второго прибора учета"
@@ -144,7 +147,7 @@
               </div>
               <div class="form__group">
                 <label>
-                  <input type="checkbox" checked class="form__group-input checkbox" />
+                  <input id="permission" type="checkbox" name="permission" checked required class="form__group-input checkbox" />
                   <span class="form__group-check">
                     <span class="form__group-agreement">
                       Я принимаю согласие на обработку <a href="">персональных данных</a>
@@ -153,7 +156,7 @@
                 </label>
               </div>
               <div class="form__group">
-                <button class="form__group-button button">Передать показания</button>
+                <button  class="form__group-button button">Передать показания</button>
               </div>
             </form>
           </div>
