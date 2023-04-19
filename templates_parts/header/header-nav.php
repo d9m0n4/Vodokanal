@@ -37,7 +37,7 @@ function add_menu_list_item_class($classes, $item, $args) {
   <?php 
     wp_nav_menu( [
       'theme_location'  => '',
-      'menu'            => '',
+      'menu'            => 'menu',
       'container'       => false,
       'container_class' => '',
       'container_id'    => '',
