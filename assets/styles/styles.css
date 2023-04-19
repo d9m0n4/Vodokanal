@@ -500,15 +500,17 @@ main {
 
 .company__info {
   margin: 3rem 0;
+  font-weight: 500;
 }
 
 .company__info-content {
   margin-top: 1.5rem;
   padding: 1.5rem;
+  text-align: justify;
 }
 
-.company__info-content p:first-child {
-  margin-bottom: 12px;
+.company__info-content p {
+  margin-bottom: .2rem;
 }
 
 .company__info-cards {
