@@ -9,6 +9,48 @@ window.addEventListener('DOMContentLoaded', function () {
   const mainForm = document.querySelector('.page__form');
   const checkbox = mainForm.querySelector('#permission');
 
+  async function fetchVacancies() {
+    const response =  await fetch('http://opendata.trudvsem.ru/api/v1/vacancies/company/inn/4339008240')
+    return await response.json()
+  }
+
+  function renderVacancies () {
+    const root = document.getElementById('vacancies')
+    fetchVacancies().then(({results}) => {
+      results.vacancies.forEach(vacancy => {
+        const el = `
+          <div class="page__accordion active">
+              <div data-accordion="title" class="page__accordion-title">${vacancy.vacancy['job-name']}</div>
+               <div data-accordion="content" class="page__accordion-content">
+                 <table class="table">
+                   <tr>
+                     <td class="td table__label">Должностные обязанности</td>
+                       <td class="td">${vacancy.vacancy.duty}</td>
+                    </tr>
+                    <tr>
+                        <td class="td table__label">График</td>
+                        <td class="td">${vacancy.vacancy.schedule}</td>
+                    </tr>
+                    <tr>
+                        <td class="td table__label">Занятость</td>
+                        <td class="td">${vacancy.vacancy.employment}</td>
+                    </tr>
+                    <tr>
+                        <td class="td table__label">Зарплата</td>
+                        <td class="td">${vacancy.vacancy.salary} р.</td>
+                    </tr>
+                    </table>
+                </div>
+            </div>
+        `
+        root.insertAdjacentHTML('afterbegin', el)
+      })
+    }).catch(e => {
+      console.log(e)
+    })
+  }
+  renderVacancies()
+
   function serializeForm(formNode) {
     const { elements } = formNode;
     const formData = new FormData();
@@ -136,4 +178,5 @@ window.addEventListener('DOMContentLoaded', function () {
     }
   }
   const modal = new Modal('data-services');
+
 });
