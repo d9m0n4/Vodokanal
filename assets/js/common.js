@@ -1,4 +1,6 @@
+
 window.addEventListener('DOMContentLoaded', function () {
+
   // const mapInit = () => {
   //     const map = new ymaps.Map('ymap', {
   //         center: [],
@@ -6,8 +8,7 @@ window.addEventListener('DOMContentLoaded', function () {
   //     })
   // }
   // ymaps.ready(mapInit)
-  const mainForm = document.querySelector('.page__form');
-  const checkbox = mainForm.querySelector('#permission');
+
 
   async function fetchVacancies() {
     const response =  await fetch('http://opendata.trudvsem.ru/api/v1/vacancies/company/inn/4339008240')
@@ -16,9 +17,10 @@ window.addEventListener('DOMContentLoaded', function () {
 
   function renderVacancies () {
     const root = document.getElementById('vacancies')
-    fetchVacancies().then(({results}) => {
-      results.vacancies.forEach(vacancy => {
-        const el = `
+    if (root) {
+      fetchVacancies().then(({results}) => {
+        results.vacancies.forEach(vacancy => {
+          const el = `
           <div class="page__accordion active">
               <div data-accordion="title" class="page__accordion-title">${vacancy.vacancy['job-name']}</div>
                <div data-accordion="content" class="page__accordion-content">
@@ -43,46 +45,16 @@ window.addEventListener('DOMContentLoaded', function () {
                 </div>
             </div>
         `
-        root.insertAdjacentHTML('afterbegin', el)
+          root.insertAdjacentHTML('afterbegin', el)
+        })
+      }).catch(e => {
+        console.log(e)
       })
-    }).catch(e => {
-      console.log(e)
-    })
+    }
   }
   renderVacancies()
 
-  function serializeForm(formNode) {
-    const { elements } = formNode;
-    const formData = new FormData();
 
-    Array.from(elements)
-      .filter((e) => !!e.name)
-      .forEach((element) => {
-        const { name, value } = element;
-        formData.append(name, value);
-      });
-
-    return formData;
-  }
-
-  const sendData = async (data) => {
-    return await fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'multipart/form-data' },
-      body: data,
-    });
-  };
-
-  const formHandler = async (event) => {
-    event.preventDefault();
-    const data = serializeForm(event.target);
-    const res = await sendData(data);
-    console.log(res);
-  };
-
-  if (mainForm) {
-    mainForm.addEventListener('submit', formHandler);
-  }
 
   setTimeout(() => {
     const header = document.querySelector('.header');
@@ -178,5 +150,4 @@ window.addEventListener('DOMContentLoaded', function () {
     }
   }
   const modal = new Modal('data-services');
-
 });

@@ -108,12 +108,8 @@ get_header(); ?>
             <?php
               }
               
-              wp_reset_postdata(); // сброс
+              wp_reset_postdata();
             ?>
-
-          
-            
-            
           </div>
           <div class="news__more">
             <a href="news.html" class="button">Все новости</a>
