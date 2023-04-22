@@ -14,6 +14,7 @@ function register_assets() {
 	wp_enqueue_style( 'styles', get_template_directory_uri() . '/assets/styles/styles.css', false, null, false );
 	wp_enqueue_style( 'styles_media', get_template_directory_uri() . '/assets/styles/media.css', array('styles'), null, false );
 	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/js/common.js', false, null, true );
+	wp_enqueue_script( 'form', get_template_directory_uri() . '/assets/js/form.js', false, null, true );
 }
 
 add_theme_support( 'post-thumbnails' );

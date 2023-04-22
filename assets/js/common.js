@@ -9,10 +9,6 @@ window.addEventListener('DOMContentLoaded', function () {
   const mainForm = document.querySelector('.page__form');
   const checkbox = mainForm.querySelector('#permission');
 
-  function fetchWorkRu () {
-
-  }
-
   function serializeForm(formNode) {
     const { elements } = formNode;
     const formData = new FormData();

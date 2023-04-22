@@ -121,7 +121,15 @@
                   <input name="fio" required type="text" class="form__group-input input" placeholder="ФИО" />
                 </label>
                 <label>
-                  <input name="account" required type="text" class="form__group-input input" placeholder="Лицевой счет" />
+                  <input
+                    name="account"
+                    required
+                    type="text"
+                    class="form__group-input input"
+                    placeholder="Лицевой счет"
+                    pattern="[0-9]{1,9}"
+                    title="Допустимое значение - только цифры"
+                  />
                 </label>
               </div>
               <div class="form__group">
@@ -132,6 +140,8 @@
                     type="text"
                     class="form__group-input input"
                     placeholder="Показания прибора учета"
+                    pattern="[0-9]{1,9}"
+                    title="Допустимое значение - только цифры"
                   />
                 </label>
               </div>
@@ -142,12 +152,14 @@
                     type="text"
                     class="form__group-input input"
                     placeholder="Показания второго прибора учета"
+                    pattern="[0-9]{1,9}"
+                    title="Допустимое значение - только цифры"
                   />
                 </label>
               </div>
               <div class="form__group">
                 <label>
-                  <input id="permission" type="checkbox" name="permission" checked required class="form__group-input checkbox" />
+                  <input id="permission" type="checkbox" name="permission" checked class="form__group-input checkbox" />
                   <span class="form__group-check">
                     <span class="form__group-agreement">
                       Я принимаю согласие на обработку <a href="">персональных данных</a>
@@ -156,9 +168,13 @@
                 </label>
               </div>
               <div class="form__group">
-                <button  class="form__group-button button">Передать показания</button>
+                <button id="submit__btn" class="form__group-button button">Передать показания</button>
               </div>
             </form>
+          </div>
+          <div class="item__message">
+            <div class="item__message-title"></div>
+            <div class="item__message-subtitle"></div>
           </div>
         </div>
       </div>
