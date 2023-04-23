@@ -115,7 +115,7 @@
           <div class="item__body">
             <button class="close__btn">+</button>
             <h2 class="item__title">Передача показаний</h2>
-            <form class="page__form">
+            <form action="#" class="page__form">
               <div class="form__group">
                 <label>
                   <input name="fio" required type="text" class="form__group-input input" placeholder="ФИО" />

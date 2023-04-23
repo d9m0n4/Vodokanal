@@ -71,12 +71,15 @@ get_header(); ?>
         </div>
       </section>
 
-      <section class="news">
+    <?php
+        if (get_posts()) {
+            ?>
+        <section class="news">
         <div class="container">
         <h2 class="news__title title">Последние новости</h2>
           <div class="news__row ">
 
-        <?php 
+        <?php
               $my_posts = get_posts( array(
                 'numberposts' => 5,
                 'category'    => 0,
@@ -86,15 +89,15 @@ get_header(); ?>
                 'exclude'     => array(),
                 'meta_key'    => '',
                 'meta_value'  =>'',
-                'post_type'   => 'news',
+                'post_type'   => '',
                 'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
               ) );
-              
+
               global $post;
-              
+
               foreach( $my_posts as $post ){
                 setup_postdata( $post );
-                  
+
                 ?>
                 <a href="_news.html" class="news__row-item box">
               <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="news" class="item__image image" />
@@ -104,10 +107,10 @@ get_header(); ?>
               </div>
               <span class="item__date"><?php echo date('d.m.Y'); ?></span>
             </a>
-                  
+
             <?php
               }
-              
+
               wp_reset_postdata();
             ?>
           </div>
@@ -116,6 +119,9 @@ get_header(); ?>
           </div>
         </div>
       </section>
+    <?php
+        }
+      ?>
     </main>
 
 <?php

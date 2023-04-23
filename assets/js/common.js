@@ -6,41 +6,6 @@ window.addEventListener('DOMContentLoaded', function () {
   //     })
   // }
   // ymaps.ready(mapInit)
-  const mainForm = document.querySelector('.page__form');
-  const checkbox = mainForm.querySelector('#permission');
-
-  function serializeForm(formNode) {
-    const { elements } = formNode;
-    const formData = new FormData();
-
-    Array.from(elements)
-      .filter((e) => !!e.name)
-      .forEach((element) => {
-        const { name, value } = element;
-        formData.append(name, value);
-      });
-
-    return formData;
-  }
-
-  const sendData = async (data) => {
-    return await fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'multipart/form-data' },
-      body: data,
-    });
-  };
-
-  const formHandler = async (event) => {
-    event.preventDefault();
-    const data = serializeForm(event.target);
-    const res = await sendData(data);
-    console.log(res);
-  };
-
-  if (mainForm) {
-    mainForm.addEventListener('submit', formHandler);
-  }
 
   setTimeout(() => {
     const header = document.querySelector('.header');

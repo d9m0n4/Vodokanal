@@ -23,9 +23,8 @@ add_theme_support( 'post-thumbnails', array('post') );
 
 add_theme_support( 'menus' );
 
-
-
 define( 'ML_TEMPLATES_DIR', get_template_directory() . '/templates' );
+
 
 // add_filter( 'page_template_hierarchy', 'templates_path');
 

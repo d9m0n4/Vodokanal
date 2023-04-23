@@ -10,35 +10,31 @@ window.addEventListener('DOMContentLoaded', function () {
     checkbox.addEventListener('change', checkForm)
 
     function serializeForm(formNode) {
-        const {elements} = formNode;
-        const formData = new FormData();
-
-        Array.from(elements)
-            .filter((e) => !!e.name)
-            .forEach((element) => {
-                const {name, value} = element;
-                formData.append(name, value);
-            });
-
-        return formData;
+        const data = new FormData(formNode)
+        return data;
     }
 
     async function sendData  (data)  {
-        return await fetch('/', {
+        return await fetch('wp-content/themes/vodokanal/sendForm.php', {
             method: 'POST',
-            headers: {'Content-Type': 'multipart/form-data'},
             body: data,
         });
     }
-
     async function formHandler (event)  {
-        event.preventDefault();
-        const data = serializeForm(event.target);
-        submitBtn.disabled = true
-        const res = await sendData(data);
-        console.log(res);
-        this.reset()
-        submitBtn.disabled = false
+        try {
+            event.preventDefault();
+            const data = serializeForm(event.target);
+            console.log(data)
+            submitBtn.disabled = true
+            const res = await sendData(data);
+            console.log(res);
+
+        } catch (e) {
+            console.log(e)
+        } finally {
+            this.reset()
+            submitBtn.disabled = false
+        }
     }
 
     if (mainForm) {

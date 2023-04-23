@@ -64,8 +64,9 @@ textarea:focus:required:invalid {
 }
 input:required:valid,
 textarea:required:valid {
-  border-color: green;
+  border-color: var(--accent);
 }
+
 
 * {
   margin: 0;
