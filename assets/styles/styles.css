@@ -67,7 +67,6 @@ textarea:required:valid {
   border-color: var(--accent);
 }
 
-
 * {
   margin: 0;
   padding: 0;
@@ -242,6 +241,18 @@ main {
 }
 
 .nav__link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent);
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.nav__link[aria-current='page']::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -521,7 +532,7 @@ main {
 }
 
 .company__info-content p {
-  margin-bottom: .2rem;
+  margin-bottom: 0.2rem;
 }
 
 .company__info-cards {
@@ -890,8 +901,7 @@ main {
 .page__sidebar .content__row {
   padding: 2rem 3rem 2rem 2rem;
 }
-.page__sidebar-nav {
-}
+
 .page__sidebar-nav__list li {
   margin-bottom: 0.5rem;
   min-width: 180px;
@@ -902,7 +912,7 @@ main {
 }
 
 .page__sidebar-nav__list .nav__link {
-  padding: 0.2rem;
+  padding: 0.2rem 0.4rem;
   color: var(--text);
   transition: all 0.25s ease-in-out;
 }
@@ -1177,7 +1187,6 @@ main {
   display: none;
   align-items: center;
   justify-content: center;
-
 }
 
 @keyframes fadeInContent {

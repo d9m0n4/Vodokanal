@@ -1,15 +1,15 @@
 <?php
 
 ?>
-<nav class="header__main-navigation">
+<nav class="page__sidebar-nav">
   <?php 
     wp_nav_menu( [
       'theme_location'  => '',
-      'menu'            => 'menu',
+      'menu'            => $args['name'],
       'container'       => false,
       'container_class' => '',
       'container_id'    => '',
-      'menu_class'      => 'header__navigation-list',
+      'menu_class'      => 'page__sidebar-nav__list',
       'menu_id'         => '',
       'echo'            => true,
       'fallback_cb'     => 'wp_page_menu',
@@ -21,15 +21,8 @@
       'depth'           => 0,
       'walker'          => '',
       'link_class'      => 'nav__link',
-      'list_item_class' => 'header__navigation-list__item',
-      'sub_menu_class'  => 'navigation__sub-menu box'
+      'list_item_class' => '',
+      'sub_menu_class'  => ''
     ] );
   ?>  
 </nav>
-
-<div class="mobile__navigation-button">
-  <button class="mobile__burger">
-    <span></span>
-  </button>
-</div>
-<nav class="mobile__navigation"></nav>

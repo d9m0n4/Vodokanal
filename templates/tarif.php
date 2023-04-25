@@ -19,15 +19,7 @@ Template Name: Тарифы
           
           <aside class="page__sidebar">
             <div class="content__row box">
-              <nav class="page__sidebar-nav">
-                <ul class="page__sidebar-nav__list">
-                  <li><a href="tarif.html" class="nav__link active">Тарифы</a></li>
-                  <li><a href="standards.html" class="nav__link">Нормативы</a></li>
-                  <li><a href="services.html" class="nav__link">Услуги</a></li>
-                  <li><a href="quality.html" class="nav__link">Показатели качества</a></li>
-                  <li><a href="connect.html" class="nav__link">Подключение к сетям</a></li>
-                </ul>
-              </nav>
+              <?php get_template_part( 'templates_parts/aside/aside_menu', null, ['name' => 'abonents'] )?>
             </div>
           </aside>
 
