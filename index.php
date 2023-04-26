@@ -25,19 +25,19 @@ get_header(); ?>
 
           <div class="company__info-cards row">
             <div class="company__info-cards__item box">
-              <img src="<?php bloginfo('template_url');?>/assets/images/icons/waterIcon.svg" class="item__icon image" alt="2" />
+              <img src="<?php bloginfo('template_url');?>/assets/images/icons/waters.svg" class="item__icon image" alt="2" />
               <p class="item__title">Сети водоснабжения</p>
               <span class="item__subtitle">Суммарной протяженностью: 201,549 км</span>
             </div>
 
               <div class="company__info-cards__item box">
-                  <img src="<?php bloginfo('template_url');?>/assets/images/icons/waterIcon.svg" class="item__icon image" alt="2" />
-                  <p class="item__title">Среднесуточный подъем воды</p>
-                  <span class="item__subtitle">Суммарной протяженностью: 43,2 км</span>
+                  <img src="<?php bloginfo('template_url');?>/assets/images/icons/waters.svg" class="item__icon image" alt="2" />
+                  <p class="item__title">Питьевой воды ежесуточно</p>
+                  <span class="item__subtitle">Около 1600 м3</span>
               </div>
 
             <div class="company__info-cards__item box">
-              <img src="<?php bloginfo('template_url');?>/assets/images/icons/TubeIcon.svg" class="item__icon image" alt="2" />
+              <img src="<?php bloginfo('template_url');?>/assets/images/icons/pipes.svg" class="item__icon image" alt="2" />
               <p class="item__title">Сети канализации</p>
               <span class="item__subtitle">Суммарной протяженностью: 56,033 км</span>
             </div>
