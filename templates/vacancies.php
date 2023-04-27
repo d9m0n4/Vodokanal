@@ -18,13 +18,7 @@ Template Name: Вакансии
         <div class="page__content-wrapper row container">
             <aside class="page__sidebar">
                 <div class="content__row box">
-                    <nav class="page__sidebar-nav">
-                        <ul class="page__sidebar-nav__list">
-                            <li><a href="#" class="nav__link">История</a></li>
-                            <li><a href="#" class="nav__link">Реквизиты</a></li>
-                            <li><a href="#" class="nav__link">Вакансии</a></li>
-                        </ul>
-                    </nav>
+                    <?php get_template_part( 'templates_parts/aside/aside_menu', null, ['name' => 'about'] )?>
                 </div>
             </aside>
             <article class="page__content-body">

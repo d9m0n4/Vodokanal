@@ -2,12 +2,19 @@ window.addEventListener('DOMContentLoaded', function () {
     const mainForm = document.querySelector('.page__form');
     const checkbox = mainForm.querySelector('#permission');
     const submitBtn = mainForm.querySelector('#submit__btn')
+    const messagesBlock = document.querySelector('.item__message')
+    const mTitle = messagesBlock.querySelector('.item__message-title')
+    const mSubTitle = messagesBlock.querySelector('.item__message-subtitle')
 
     function checkForm() {
         submitBtn.disabled = !this.checked
     }
 
     checkbox.addEventListener('change', checkForm)
+
+    function onSuccess() {
+        console.log(123)
+    }
 
     function serializeForm(formNode) {
         const data = new FormData(formNode)
@@ -24,10 +31,8 @@ window.addEventListener('DOMContentLoaded', function () {
         try {
             event.preventDefault();
             const data = serializeForm(event.target);
-            console.log(data)
             submitBtn.disabled = true
             const res = await sendData(data);
-            console.log(res);
 
         } catch (e) {
             console.log(e)
@@ -35,6 +40,11 @@ window.addEventListener('DOMContentLoaded', function () {
             this.reset()
             submitBtn.disabled = false
         }
+    }
+
+    if (new Date(Date.now()).getDate() > 25) {
+        mainForm.remove()
+        messagesBlock.style = 'display: flex'
     }
 
     if (mainForm) {

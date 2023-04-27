@@ -7,11 +7,72 @@ window.addEventListener('DOMContentLoaded', function () {
   // }
   // ymaps.ready(mapInit)
 
+  const vacansiesRoot = document.querySelector('#vacancies')
+
   setTimeout(() => {
     const header = document.querySelector('.header');
     const headerHeight = header.getBoundingClientRect().height;
     document.querySelector(':root').style.setProperty('--header-height', `${headerHeight}px`);
   }, 500);
+
+  const fetchVacancies = async (url) => {
+    try {
+      const data = await fetch(url)
+      const result = await data.json()
+      if (data && result.status == 200) {
+        return result
+      } else {
+        throw new Error(result)
+      }
+    } catch (e) {
+      return e
+    }
+  }
+
+  const renderVacancies = (root) => {
+    const url = 'https://opendata.trudvsem.ru/api/v1/vacancies/company/inn/4339008240'
+    if (root) {
+      fetchVacancies(url).then((data) => {
+        if (data.results && !Object.keys(data.results).length) {
+          const errorMsg =  `<div><p>Актуальных вакансий нет!</p></div>`
+          root.insertAdjacentHTML('afterbegin', errorMsg)
+        } else {
+          data.results.vacancies.forEach(({vacancy}) => {
+            const node = `
+          <div class="page__accordion">
+            <div data-accordion="title" class="page__accordion-title">
+                  ${vacancy['job-name']}
+                </div>
+                <div data-accordion="content" class="page__accordion-content vacancies">
+                    <div class="vacancy__title">Должностные обязанности</div>
+                    <div class="vacancy__descr">${vacancy.duty}</div>
+
+                    <div class="vacancy__title">График работы</div>
+                    <div class="vacancy__descr">${vacancy.schedule}</div>
+
+                    <div class="vacancy__title">Телефон</div>
+                    <div class="vacancy__descr">${vacancy.company.phone}</div>
+
+                    <div class="vacancy__title">Зарплата</div>
+                    <div class="vacancy__descr">${vacancy.salary}</div>
+
+                    <div class="vacancy__descr"><a href="${vacancy['vac_url']}" class="button">Подробнее</a></div>
+                </div>
+          </div>
+        `
+            root.insertAdjacentHTML('afterbegin', node)
+          })
+          toggleAccordion('.page__accordion', '.page__accordion-title', 'active');
+        }
+      }).catch(e => {
+        console.error(e)
+        const errorMsg =  `<div><p>Не удалось получить данные, попробуйте позже!</p></div>`
+        root.insertAdjacentHTML('afterbegin', errorMsg)
+      })
+    }
+  }
+  renderVacancies(vacansiesRoot)
+
 
   const toggleAccordion = (selector, control, activeClass) => {
     const accordions = document.querySelectorAll(selector);
@@ -102,3 +163,4 @@ window.addEventListener('DOMContentLoaded', function () {
   }
   const modal = new Modal('data-services');
 });
+

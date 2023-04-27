@@ -935,6 +935,11 @@ main {
   padding: 0.2rem 0 0.2rem 1rem;
 }
 
+.page__sidebar-nav__list .nav__link[aria-current="page"] {
+  color: var(--accent);
+  padding: 0.2rem 0 0.2rem 1rem;
+}
+
 .page__sidebar-nav__list .nav__link.active li {
   padding: 0 0.5rem;
 }
@@ -1045,6 +1050,11 @@ main {
   animation: accordion 0.25s ease-in-out;
 }
 
+.page__accordion.active .vacancies {
+  display: grid;
+}
+
+
 @keyframes accordion {
   0% {
     opacity: 0;
@@ -1054,7 +1064,29 @@ main {
   }
 }
 
-/*NEWS*/
+/*vacancies*/
+
+.vacancies {
+
+}
+
+.vacancy__title {
+  font-weight: 600;
+  text-align: center;
+  border-bottom: 1px solid #f5f5f5;
+  padding: 8px 0;
+}
+
+.vacancy__descr {
+  margin-bottom: 16px;
+  border-bottom: 1px solid #f5f5f5;
+  padding: 8px 0;
+  text-align: center;
+}
+.vacancy__descr:last-child {
+  border: none;
+  text-align: center;
+}
 
 /*CONTACTS*/
 
