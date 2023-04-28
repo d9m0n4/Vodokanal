@@ -111,7 +111,7 @@
           </div>
         </div>
 
-        <div data-box="readings" class="modal__content-item box">
+        <div id="form-modal" data-box="readings" class="modal__content-item box">
           <div class="item__body">
             <button class="close__btn">+</button>
             <h2 class="item__title">Передача показаний</h2>
@@ -172,10 +172,7 @@
               </div>
             </form>
           </div>
-          <div class="item__message">
-            <div class="item__message-title"></div>
-            <div class="item__message-subtitle"></div>
-          </div>
+
         </div>
       </div>
     </div>

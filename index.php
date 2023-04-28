@@ -3,8 +3,9 @@
 get_header(); ?>
 
 <main>
-      <section class="first__screen" style="background-image: url('<?php bloginfo('template_url');?>/assets/images/main/1.webp')">
+      <section class="first__screen">
         <div class="first__screen-content container">
+            <img class="fi" src="<?php bloginfo('template_url');?>/assets/images/main/1.webp" alt="">
           <div class="first__screen-title">
             <h1>Крупнейшее предприятие на территории Яранского района</h1>
           </div>

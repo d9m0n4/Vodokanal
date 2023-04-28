@@ -3,8 +3,7 @@ window.addEventListener('DOMContentLoaded', function () {
     const checkbox = mainForm.querySelector('#permission');
     const submitBtn = mainForm.querySelector('#submit__btn')
     const messagesBlock = document.querySelector('.item__message')
-    const mTitle = messagesBlock.querySelector('.item__message-title')
-    const mSubTitle = messagesBlock.querySelector('.item__message-subtitle')
+    const formModal = document.querySelector('#form-modal')
 
     function checkForm() {
         submitBtn.disabled = !this.checked
@@ -13,7 +12,8 @@ window.addEventListener('DOMContentLoaded', function () {
     checkbox.addEventListener('change', checkForm)
 
     function onSuccess() {
-        console.log(123)
+        const message = `<p>Показания успешно переданы!</p>`
+        formModal.insertAdjacentHTML('beforeend', message)
     }
 
     function serializeForm(formNode) {
@@ -33,7 +33,7 @@ window.addEventListener('DOMContentLoaded', function () {
             const data = serializeForm(event.target);
             submitBtn.disabled = true
             const res = await sendData(data);
-
+            console.log(res)
         } catch (e) {
             console.log(e)
         } finally {
@@ -42,9 +42,10 @@ window.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    if (new Date(Date.now()).getDate() > 25) {
+    if (new Date(Date.now()).getDate() > 29) {
         mainForm.remove()
-        messagesBlock.style = 'display: flex'
+        const message = `<p>Показания передаются с 1 по 25 число каждого месяца!</p>`
+        formModal.insertAdjacentHTML('beforeend', message)
     }
 
     if (mainForm) {

@@ -29,6 +29,7 @@
   font-weight: 400;
   font-style: normal;
   src: url('../fonts/Montserrat-Regular.woff2') format('woff2');
+  font-display: swap
 }
 
 @font-face {
@@ -36,6 +37,7 @@
   font-weight: 500;
   font-style: normal;
   src: url('../fonts/Montserrat-Medium.woff2') format('woff2');
+  font-display: swap
 }
 
 @font-face {
@@ -43,6 +45,7 @@
   font-weight: 700;
   font-style: normal;
   src: url('../fonts/Montserrat-Bold.woff2') format('woff2');
+  font-display: swap
 }
 
 /* GENERAL CSS SETTINGS */
@@ -94,6 +97,17 @@ html {
 
 ::-webkit-scrollbar-track {
   background: #fafafa;
+}
+
+.fi {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 body {
@@ -501,6 +515,7 @@ main {
   background-repeat: no-repeat;
   background-color: var(--accent);
   display: flex;
+  position: relative;
 }
 
 .first__screen-content {
@@ -562,6 +577,11 @@ main {
   font-size: 0.95em;
 }
 
+.company__info-cards__item .item__icon {
+  width: 90px;
+  height: 90px;
+}
+
 /*SERVICES*/
 
 .services {
@@ -587,6 +607,11 @@ main {
 
 .services__row-item img {
   margin-bottom: 0.3rem;
+}
+
+.services__row-item .item__icon {
+  width: 90px;
+  height: 64px;
 }
 
 .services__row-item:hover:not(.services__row-item--full) {
